@@ -19,3 +19,5 @@ IncomeModel.create(income)
 .catch((error) => {
     console.log(error);
 })
+
+mongoose.connection.close();

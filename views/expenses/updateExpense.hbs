@@ -19,12 +19,11 @@
         <option value="other">Other</option>
     </select>
     <label for="amount">How much ?</label>
-    <input name="amount" id="amount" type="number" min="1" max="1000000000" placeholder="100" value="{{expense.amount}}>
+    <input name="amount" id="amount" type="number" min="1" max="1000000000" value="{{expense.amount}}">
     <label for="date">When the expense was made ?</label>
-    <input name="date" id="date" type="date" value="{{expense.date}}>
+    <input name="date" id="date" type="date" value="{{expense.date}}">
     <label for="description">Add a description</label>
-    <textarea name="description" id="description" type="text" placeholder="Electricity, water, etc.."
-        value="{{expense.description}}></textarea>
+    <textarea name="description" id="description" type="text" value="{{expense.description}}"></textarea>
     <label for="picture">Add a file if necessary</label>
     <input name="picture" id="picture" type="file">
     <button type="submit">Update</button>

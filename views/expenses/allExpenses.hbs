@@ -13,7 +13,7 @@
         {{#each expenses}}
         <tr>
             <td>{{this.date}}</td>
-            <td>{{this.title}}</td>
+            <td><a href="/expenses/details/{{this._id}}">{{this.title}}</a></td>
             <td>{{this.category}}</td>
             <td>{{this.amount}}</td>
             <td>

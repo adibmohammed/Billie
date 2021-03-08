@@ -10,16 +10,19 @@
         <th>Description</th>
         <th>Picture</th>
     </thead>
+    {{#each incomes}}
     <tbody>
-        {{#each incomes}}
         <td>{{this.title}}</td>
         <td>{{this.source}}</td>
         <td>{{this.amount}}</td>
         <td>{{this.date}}</td> {{!Date format isn't good, still have the UNIX format!}}
         <td>{{this.description}}</td>
-        {{!-- <td><img src="{{this.picture}}"></td> --}} {{!Commenting because of img size!}}
-        {{/each}}
+        <td>
+            {{!-- <img src="{{this.picture}}"> --}}
+        </td> {{!Commenting because of img size!}}
+
     </tbody>
+    {{/each}}
 </table>
 
 

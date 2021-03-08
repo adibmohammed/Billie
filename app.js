@@ -25,42 +25,44 @@ hbs.registerPartials(path.join(__dirname, "views/partials"));
 //index
 const indexRouter = require("./routes/index");
 //User
-const createUserRouter = require("./routes/UsersCRUD/createUser");
-const deleteUserRouter = require("./routes/UsersCRUD/deleteUsers");
-const readOneUserRouter = require("./routes/UsersCRUD/readOneUser");
-const updateUserRouter = require("./routes/UsersCRUD/updateUser");
+// const createUserRouter = require("./routes/UsersCRUD/createUser");
+// const deleteUserRouter = require("./routes/UsersCRUD/deleteUsers");
+// const readOneUserRouter = require("./routes/UsersCRUD/readOneUser");
+// const updateUserRouter = require("./routes/UsersCRUD/updateUser");
 // //Income
-const allIncomesRouter = require(".routes/ExpensesCRUD/allIncomes.js");
-const createIncomeRouter = require("./routes/IncomesCRUD/createIncome");
-const deleteIncomeRouter = require("./routes/IncomesCRUD/deleteIncome");
-const readOneIncomeRouter = require("./routes/IncomesCRUD/readOneIncome");
-const updateIncomeRouter = require("./routes/IncomesCRUD/updateIncome");
+// const createIncomeRouter = require("./routes/IncomesCRUD/createIncome");
+// const deleteIncomeRouter = require("./routes/IncomesCRUD/deleteIncome");
+// const readOneIncomeRouter = require("./routes/IncomesCRUD/readOneIncome");
+// const updateIncomeRouter = require("./routes/IncomesCRUD/updateIncome");
+// const allIncomesRouter = require("./routes/IncomesCRUD/allIncomes");
+
 // //Expense
-const allExpensesRouter = require(".routes/ExpensesCRUD/allExpenses.js");
 const createExpenseRouter = require("./routes/ExpensesCRUD/createExpense");
 const deleteExpenseRouter = require("./routes/ExpensesCRUD/deleteExpense");
 const readOneExpenseRouter = require("./routes/ExpensesCRUD/readOneExpense");
 const updateExpenseRouter = require("./routes/ExpensesCRUD/updateExpense");
+const allExpensesRouter = require("./routes/ExpensesCRUD/allExpenses");
 
 //index
 app.use("/", indexRouter);
 // //User
-app.use("/", createUserRouter);
-app.use("/", deleteUserRouter);
-app.use("/", readOneUserRouter);
-app.use("/", updateUserRouter);
-// //Income
-app.use("/", allIncomesRouter);
-app.use("/", createIncomeRouter);
-app.use("/", deleteIncomeRouter);
-app.use("/", readOneIncomeRouter);
-app.use("/", updateIncomeRouter);
+// app.use("/", createUserRouter);
+// app.use("/", deleteUserRouter);
+// app.use("/", readOneUserRouter);
+// app.use("/", updateUserRouter);
+// // //Income
+// app.use("/", createIncomeRouter);
+// app.use("/", deleteIncomeRouter);
+// app.use("/", readOneIncomeRouter);
+// app.use("/", updateIncomeRouter);
+// app.use("/", allIncomesRouter);
+
 // //Expense
-app.use("/", allExpensesRouter);
 app.use("/", createExpenseRouter);
 app.use("/", deleteExpenseRouter);
 app.use("/", readOneExpenseRouter);
 app.use("/", updateExpenseRouter);
+app.use("/", allExpensesRouter);
 
 // error handler
 app.use(function (err, req, res, next) {

@@ -2,18 +2,16 @@ const express = require("express");
 const router = express.Router();
 const IncomeModel = require("../../models/IncomeModel");
 
-
 //Deleting a single income
-router.post('/incomes/delete/:id', (req, res, next) => {
-    IncomeModel.findByIdAndDelete(req.params.id) //find and delete the selected income
+router.get("/incomes/delete/:id", (req, res, next) => {
+  IncomeModel.findByIdAndDelete(req.params.id)
     .then(() => {
-        res.redirect('/incomes'); // redirecting to the list of all incomes
+      res.redirect("/incomes");
     })
     .catch((err) => {
-        console.log(err);
-        next(err);
-    })
-})
-
+      console.log(err);
+      next(err);
+    });
+});
 
 module.exports = router;

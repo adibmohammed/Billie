@@ -78,3 +78,7 @@ hbs.registerHelper('compare', function(lvalue, rvalue, options) {
 		return options.inverse(this);
 	}
 });
+
+
+////HBS helper for date format
+

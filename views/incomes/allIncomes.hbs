@@ -11,7 +11,7 @@
     </thead>
     {{#each incomes}}
     <tbody>
-        <td>{{this.title}}</td>
+        <td><a href="/incomes/details/{{this._id}}">{{this.title}}</a></td>
         <td>{{this.source}}</td>
         <td>{{this.amount}}</td>
         <td>{{this.date}}</td> {{!Date format isn't good, still have the UNIX format!}}
@@ -25,4 +25,4 @@
 </table>
 
 
-<div><a href="/income/new">Add an income</a></div>
+<div><a href="/incomes/new">Add an income</a></div>

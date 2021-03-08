@@ -19,6 +19,7 @@ router.get("/incomes/edit/:id", async (req, res, next) => {
 router.post("/incomes/edit/:id", async (req, res, next) => {
   try {
     const incomeToEdit = { ...req.body };
+    console.log(req.body)
     await IncomeModel.findByIdAndUpdate(req.params.id, incomeToEdit, {new: true});
     res.redirect("/incomes"); //redirecting to the income itself to check the updated value
   } catch (err) {

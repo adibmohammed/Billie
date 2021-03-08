@@ -1,1 +1,31 @@
 <h2>Create an Expense</h2>
+
+<form method="post" action="/expenses/new">
+    <label for="title">Title</label>
+    <input name="title" id="title" type="text" placeholder="House Expenses" value="Expense 1">
+    <label for="category">Category</label>
+    <select name="category" id="category" type="text">
+        <option value="housing">Housing</option>
+        <option value="health">Health</option>
+        <option value="transportation">Transportation</option>
+        <option value="groceries">Groceries</option>
+        <option value="shopping">Shopping</option>
+        <option value="car">Car</option>
+        <option value="holidays">Holidays</option>
+        <option value="accomodation">Accomodation</option>
+        <option value="socialActivities">Social Activities</option>
+        <option value="restaurantsCafes">Restaurants-cafes</option>
+        <option value="subscriptions">Subscriptions</option>
+        <option value="other">Other</option>
+    </select>
+    <label for="amount">How much ?</label>
+    <input name="amount" id="amount" type="number" min="1" max="1000000000" placeholder="100" value="100">
+    <label for="date">When the expense was made ?</label>
+    <input name="date" id="date" type="date">
+    <label for="description">Add a description</label>
+    <textarea name="description" id="description" type="text" placeholder="Electricity, water, etc.."
+        value="test"></textarea>
+    <label for="picture">Add a file if necessary</label>
+    <input name="picture" id="picture" type="file">
+    <button type="submit">Add</button>
+</form>

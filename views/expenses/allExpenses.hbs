@@ -5,9 +5,7 @@
             <th>Date</th>
             <th>Title</th>
             <th>Category</th>
-            <th>Description</th>
             <th>Amount</th>
-            <th>Picture</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -17,13 +15,11 @@
             <td>{{this.date}}</td>
             <td>{{this.title}}</td>
             <td>{{this.category}}</td>
-            <td>{{this.description}}</td>
             <td>{{this.amount}}</td>
-            <td>{{this.picture}}</td>
             <td>
                 <div class="btnExpenses">
-                    <a href="/expenses/expense-update/{{this._id}}"><i class="fas fa-pen"></i></a>
-                    <a href="/expenses/expense-delete/{{this._id}}"><i class="fas fa-trash"></i></a>
+                    <a href="/expenses/update/{{this._id}}"><i class="fas fa-pen"></i></a>
+                    <a href="/expenses/delete/{{this._id}}"><i class="fas fa-trash"></i></a>
             </td>
         </tr>
         {{/each}}

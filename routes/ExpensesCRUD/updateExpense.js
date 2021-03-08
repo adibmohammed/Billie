@@ -3,7 +3,7 @@ const router = new express.Router();
 const ExpensesModel = require("./../../models/ExpensesModel");
 
 /* GET edit expense */
-router.get("/expenses/expense-update/:id", (req, res) => {
+router.get("/expenses/update/:id", (req, res, next) => {
   ExpensesModel.findById(req.params.id)
     .then((dbRes) => {
       res.render("expenses/updateExpense.hbs", { expense: dbRes });
@@ -14,12 +14,12 @@ router.get("/expenses/expense-update/:id", (req, res) => {
 });
 
 /* POST edit expense */
-router.post("/expenses/expense-update/:id",(req, res) => {
+router.post("/expenses/update/:id",(req, res, next) => {
   const { title, category, amount, date, description, picture} = req.body;
   ExpensesModel.findByIdAndUpdate(req.params.id,{
     title, category, amount, date, description, picture
   }).then((dbRes)=> {
-      res.render("/expenses/updateExpense.hbs", { expense: dbRes });
+      res.redirect("/expenses");
   }).catch((err) => {
     next(err);
   });

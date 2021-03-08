@@ -1,0 +1,29 @@
+<h2>Your incomes</h2>
+
+
+<table>
+    <thead>
+        <th>Title</th>
+        <th>Source</th>
+        <th>Amount</th>
+        <th>Date</th>
+        <th>Description</th>
+        <th>Picture</th>
+    </thead>
+    {{#each incomes}}
+    <tbody>
+        <td>{{this.title}}</td>
+        <td>{{this.source}}</td>
+        <td>{{this.amount}}</td>
+        <td>{{this.date}}</td> {{!Date format isn't good, still have the UNIX format!}}
+        <td>{{this.description}}</td>
+        <td>
+            {{!-- <img src="{{this.picture}}"> --}}
+        </td> {{!Commenting because of img size!}}
+
+    </tbody>
+    {{/each}}
+</table>
+
+
+<div><a href="/income/new">Add an income</a></div>

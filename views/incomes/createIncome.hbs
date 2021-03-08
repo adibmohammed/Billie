@@ -1,0 +1,29 @@
+<h2>A little bit richer, yay !</h2>
+
+<form method="post" action="/income/new">
+
+    <label for="title">Give your income a title</label><br>
+    <input name="title" id="title" type="text" placeholder="Christmas gift" value="test"><br>
+
+    <label for="source">Income source</label><br>
+    <select name="source" id="source" type="text"><br>
+        <option>Main Income</option>
+        <option>Secondary Income</option>
+        <option>Other</option>
+    </select><br>
+
+    <label for="amount">How much ?</label><br>
+    <input name="amount" id="amount" type="number" min="1" max="1000000000" placeholder="100" value="5"><br>
+
+    <label for="date">When did you receive the income ?</label><br>
+    <input name="date" id="date" type="date"><br>
+
+    <label for="description">Add a description</label><br>
+    <textarea name="description" id="description" type="text" placeholder="Grandma's gift for Christmas" value="test"></textarea><br>
+
+    <label for="picture">Add a file if necessary</label><br>
+    <input name="picture" id="picture" type="file"><br>
+
+    <button type="submit">Add your new income</button>
+
+</form>

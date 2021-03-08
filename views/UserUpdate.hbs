@@ -1,0 +1,34 @@
+<form method="post" action="/users/update/{{_id}}" class="form">
+
+<label for="firstname">First Name</label>
+<input type="text" name="firstname" id="firtsname" value="{{firstname}}">
+
+<label for="lastname">Last Name</label>
+<input type="text" name="lastname" id="lastname" value="{{lastname}}">
+
+<label for="username">Username</label>
+<input type="text" name="username" id="username" value="{{username}}">
+
+<label for="email">Email</label>
+<input type="text" name="email" id="name" value="{{email}}">
+
+<label for="password">Password</label>
+<input type="password" name="password" id="password" value="{{password}}">
+
+<label for="profile"></label>
+<select name="profile" id="profile">
+    <option value="Family">Family</option>
+    <option value="Business">Business</option>
+    <option value="Student">Student</option>
+    <option value="Standard">Standard</option>
+</select>
+
+<label for="gender"></label>
+<select name="gender" id="gender">
+    <option value="Woman">Woman</option>
+    <option value="Man">Man</option>
+    <option value="Prefer Not To">Prefer Not To</option>
+</select>
+
+<button>Submit</button>
+</form>

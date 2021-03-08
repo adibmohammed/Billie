@@ -1,9 +1,11 @@
-require("./config/mongodb")
+require("./config/mongodb");
+require("dotenv").config();
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const hbs = require("hbs");
 
 var helpers = require("./helpers/hbs");
 
@@ -12,6 +14,7 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+hbs.registerPartials(__dirname + "/views/partials")
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -24,10 +27,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 ///ROUTES
 const indexRouter = require('./routes/index');
 //User
-// const createUserRouter = require('./routes/UsersCRUD/createUser')
+const createUserRouter = require('./routes/UsersCRUD/createUser')
 // const deleteUserRouter = require('./routes/UsersCRUD/deleteUsers')
-// const readOneUserRouter = require('./routes/UsersCRUD/readOneUser')
-// const updateUserRouter = require('./routes/UsersCRUD/updateUser')
+const readOneUserRouter = require('./routes/UsersCRUD/readOneUser')
+const updateUserRouter = require('./routes/UsersCRUD/updateUser')
 // //Income
 // const createIncomeRouter = require('./routes/IncomesCRUD/createIncome')
 // const deleteIncomeRouter = require('./routes/IncomesCRUD/deleteIncome')
@@ -43,10 +46,10 @@ const indexRouter = require('./routes/index');
 
 app.use('/', indexRouter);
 // //User
-// app.use('/', createUserRouter)
+app.use('/', createUserRouter)
 // app.use('/', deleteUserRouter)
-// app.use('/', readOneUserRouter)
-// app.use('/', updateUserRouter)
+app.use('/', readOneUserRouter)
+app.use('/', updateUserRouter)
 // //Income
 // app.use('/', createIncomeRouter)
 // app.use('/', deleteIncomeRouter)

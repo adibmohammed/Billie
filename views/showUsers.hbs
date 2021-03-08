@@ -1,0 +1,13 @@
+<h2>Users Interface</h2>
+
+{{#each myUsers}}
+<div><b>First Name:</b> {{this.firstname}}</div>
+<div><b>Last Name:</b>{{this.lastname}}</div>
+
+<div><b>Email:</b>{{this.email}}</div>
+
+<div><b>Profile:</b>{{this.profile}}</div>
+<div><b>Gender:</b>{{this.gender}}</div>
+
+<div><a href="/users/update/{{this._id}}">Update my credentials</a></div>
+{{/each}}

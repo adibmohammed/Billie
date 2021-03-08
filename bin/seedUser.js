@@ -7,10 +7,25 @@ const UserModel = require("./../models/UserModel");
 
 const users = [
   {
+    firstname: "Mona",
+    lastname: "Bellucci",
     username: "Mona",
-    email: "mona@gmail.com",
+    email: "mon@gmail.com",
 
     password: "1234Lisa",
+
+    profile: "Standard",
+    gender: "Woman",
+    avatar: "",
+  },
+
+  {
+    firstname: "Lisa",
+    lastname: "Johnson",
+    username: "Lisaj",
+    email: "lis@gmail.com",
+
+    password: "lisaaa",
 
     profile: "Standard",
     gender: "Woman",
@@ -25,5 +40,3 @@ UserModel.create(users)
   .catch((error) => {
     console.log(error);
   });
-
-  mongoose.connection.close();

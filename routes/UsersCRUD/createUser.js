@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const UsersModel = require('./../../models/UserModel');
-const uploader = require('./../../config/cloudinaray');
+const uploader = require('./../../config/cloudinary');
 
 
 // GET Method for creationg user (form):
 router.get('/signup', (req, res, next) => {
-	res.render('/Userssignup.hbs');
+	res.render('/Users/signup.hbs');
 });
 
 // POST Method for creationg a user (from form):

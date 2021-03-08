@@ -7,8 +7,14 @@ const IncomeSchema = new Schema({
     type: String,
     enum: ["Main Income", "Secondary Income", "Other"],
   },
-  amount: Number,
-  date: Date,
+  amount: {
+    type: Number,
+    required: true,
+  },
+  date: {
+    type: Date,
+    required: true,
+  },
   description: String,
   picture: {
     type: String,

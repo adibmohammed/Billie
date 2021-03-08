@@ -1,1 +1,30 @@
 <h1>Update Expense</h1>
+
+<form method="post" action="/expenses/update/{{expense._id}}">
+    <label for="title">Title</label>
+    <input name="title" id="title" type="text" placeholder="House Expenses" value="{{expense.title}}">
+    <label for="category">Category</label>
+    <select name="category" id="category" type="text" value="{{expense.category}}">
+        <option value="housing">Housing</option>
+        <option value="health">Health</option>
+        <option value="transportation">Transportation</option>
+        <option value="groceries">Groceries</option>
+        <option value="shopping">Shopping</option>
+        <option value="car">Car</option>
+        <option value="holidays">Holidays</option>
+        <option value="accomodation">Accomodation</option>
+        <option value="socialActivities">Social Activities</option>
+        <option value="restaurantsCafes">Restaurants-cafes</option>
+        <option value="subscriptions">Subscriptions</option>
+        <option value="other">Other</option>
+    </select>
+    <label for="amount">How much ?</label>
+    <input name="amount" id="amount" type="number" min="1" max="1000000000" value="{{expense.amount}}">
+    <label for="date">When the expense was made ?</label>
+    <input name="date" id="date" type="date" value="{{expense.date}}">
+    <label for="description">Add a description</label>
+    <textarea name="description" id="description" type="text" value="{{expense.description}}"></textarea>
+    <label for="picture">Add a file if necessary</label>
+    <input name="picture" id="picture" type="file">
+    <button type="submit">Update</button>
+</form>

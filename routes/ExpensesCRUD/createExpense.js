@@ -20,7 +20,7 @@ router.post("/expenses/new",(req, res) => {
     picture
   }).then((dbRes)=> {
     console.log(dbRes);
-      res.render("expenses/createExpense.hbs", {expenses:dbRes});
+      res.redirect("/expenses");
   }).catch((err) => {
     next(err);
   });

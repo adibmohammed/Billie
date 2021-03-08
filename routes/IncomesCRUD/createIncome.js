@@ -3,12 +3,12 @@ const router = express.Router();
 const IncomeModel = require("../../models/IncomeModel");
 
 //GET route to enter a new income
-router.get("/income/new", (req, res, next) => {
+router.get("/incomes/new", (req, res, next) => {
   res.render("incomes/createIncome");
 });
 
 //POST route to send the new income via a form
-router.post("/income/new", async (req, res, next) => {
+router.post("/incomes/new", async (req, res, next) => {
   const newIncome = { ...req.body };
   console.log(newIncome);
   try {

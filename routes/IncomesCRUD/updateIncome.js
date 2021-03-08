@@ -2,16 +2,25 @@ const express = require("express");
 const router = express.Router();
 const IncomeModel = require("../../models/IncomeModel");
 
-//GET route to enter a new income
-router.get("/income-edit/:id", (req, res, next) => {
-  res.render("incomes/updateIncome");
+//GET route to update an existing a new income
+router.get("/incomes/edit/:id", async (req, res, next) => {
+  try {
+    const incomeDetails = await IncomeModel.findById(req.params.id);
+    // console.log(incomeDetails)
+    res.render("incomes/updateIncome", {incomeDetails});
+  }
+  catch (err) {
+    next(err);
+    console.log(err);
+  }
 });
 
-//POST route to send the new income via a form
-router.post("/income-edit/:id", async (req, res, next) => {
+//POST route to send the new infos via a form
+router.post("/incomes/edit/:id", async (req, res, next) => {
   try {
-    await IncomeModel.findOneAndUpdate(req.params.id);
-    res.redirect("/income-edit/:id"); //redirecting to the income itself to check the updated value
+    const incomeToEdit = { ...req.body };
+    await IncomeModel.findByIdAndUpdate(req.params.id, incomeToEdit, {new: true});
+    res.redirect("/incomes"); //redirecting to the income itself to check the updated value
   } catch (err) {
     console.log(err);
     next(err);

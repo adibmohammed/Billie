@@ -7,8 +7,7 @@
         <th>Source</th>
         <th>Amount</th>
         <th>Date</th>
-        <th>Description</th>
-        <th>Picture</th>
+        <th>Actions</th>
     </thead>
     {{#each incomes}}
     <tbody>
@@ -16,11 +15,11 @@
         <td>{{this.source}}</td>
         <td>{{this.amount}}</td>
         <td>{{this.date}}</td> {{!Date format isn't good, still have the UNIX format!}}
-        <td>{{this.description}}</td>
         <td>
-            {{!-- <img src="{{this.picture}}"> --}}
-        </td> {{!Commenting because of img size!}}
-
+            <div class="btnIncomes">
+                <a href="/incomes/edit/{{this._id}}"><i class="fas fa-pen"></i></a>
+                <a href="/incomes/delete/{{this._id}}"><i class="fas fa-trash"></i></a>
+        </td>
     </tbody>
     {{/each}}
 </table>

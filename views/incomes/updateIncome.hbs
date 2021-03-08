@@ -1,1 +1,29 @@
 <h2>Made a mistake ? Edit it !</h2>
+
+<form method="post" action="/incomes/edit/{{incomeDetails._id}}">
+
+    <label for="title">Title</label><br>
+    <input name="title" id="title" type="text" value="{{incomeDetails.title}}"><br>
+
+    <label for="source">Income source</label><br>
+    <select name="source" id="source" type="text" value="{{incomeDetails.source}}"><br>
+        <option>Main Income</option>
+        <option>Secondary Income</option>
+        <option>Other</option>
+    </select><br>
+
+    <label for="amount">How much ?</label><br>
+    <input name="amount" id="amount" type="number" min="1" max="1000000000" value="{{incomeDetails.amount}}"><br>
+
+    <label for="date">When did you receive the income ?</label><br>
+    <input name="date" id="date" type="date"><br>
+
+    <label for="description">Modify the description</label><br>
+    <textarea name="description" id="description" type="text">{{incomeDetails.description}}</textarea><br>
+
+    <label for="picture">Modify the file if necessary</label><br>
+    <input name="picture" id="picture" type="file"><br>
+
+    <button type="submit">Update the income</button>
+
+</form>

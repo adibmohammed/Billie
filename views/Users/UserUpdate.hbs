@@ -1,4 +1,4 @@
-<form method="post" action="/users/update/{{_id}}" class="form">
+<form method="post" action="/users/update/{{_id}}" class="form" enctype="multipart/form-data">
 
 <label for="firstname">First Name</label>
 <input type="text" name="firstname" id="firtsname" value="{{firstname}}">
@@ -29,6 +29,11 @@
     <option value="Man">Man</option>
     <option value="Prefer Not To">Prefer Not To</option>
 </select>
+
+<label for="avatar">
+    Choose a Profile Picture 
+</label>
+<input type="file" name="avatar" id="avatar">
 
 <button>Submit</button>
 </form>

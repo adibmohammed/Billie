@@ -6,7 +6,7 @@ const UsersModel = require("./../../models/UserModel");
 
 router.get("/users/update/:id", (req, res, next) => {
     UsersModel.findById(req.params.id)
-    .then((user) => res.render("UserUpdate.hbs", user))
+    .then((user) => res.render("Users/UserUpdate.hbs", user))
     .catch(next);
 
 })

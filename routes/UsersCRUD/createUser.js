@@ -6,18 +6,15 @@ const uploader = require('./../../config/cloudinaray');
 
 // GET Method for creationg user (form):
 router.get('/signup', (req, res, next) => {
-	res.render('signup.hbs');
+	res.render('/Userssignup.hbs');
 });
 
 // POST Method for creationg a user (from form):
 
 router.post('/signup', uploader.single("avatar"), async (req, res, next) => {
-	const { firstname, lastname, username, email, password, profile, gender} = req.body;
+	const { firstname, lastname, username, email, password, profile, gender, avatar} = req.body;
 console.log("Sign UP is working", req.body);
-let avatar;
-if (req.file) {
-  avatar = req.file.path;
-}
+
 console.log("This is the avatar" , avatar);
 	try {
 		const dbRes = await UsersModel.create({

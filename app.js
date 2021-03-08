@@ -1,18 +1,15 @@
 require("./config/mongodb");
-<<<<<<< HEAD
 require("dotenv").config();
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-=======
 var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
->>>>>>> ec46d277f224b860c581f4c8dc2c7899aa6f7dea
 const hbs = require("hbs");
 
 var helpers = require("./helpers/hbs");
@@ -20,14 +17,11 @@ var helpers = require("./helpers/hbs");
 var app = express();
 
 // view engine setup
-<<<<<<< HEAD
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 hbs.registerPartials(__dirname + "/views/partials")
-=======
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
->>>>>>> ec46d277f224b860c581f4c8dc2c7899aa6f7dea
 
 app.use(logger("dev"));
 app.use(express.json());
@@ -40,17 +34,14 @@ hbs.registerPartials(path.join(__dirname, "views/partials"));
 //index
 const indexRouter = require("./routes/index");
 //User
-<<<<<<< HEAD
 const createUserRouter = require('./routes/UsersCRUD/createUser')
-// const deleteUserRouter = require('./routes/UsersCRUD/deleteUsers')
+const deleteUserRouter = require('./routes/UsersCRUD/deleteUsers')
 const readOneUserRouter = require('./routes/UsersCRUD/readOneUser')
 const updateUserRouter = require('./routes/UsersCRUD/updateUser')
-=======
 // const createUserRouter = require("./routes/UsersCRUD/createUser");
 // const deleteUserRouter = require("./routes/UsersCRUD/deleteUsers");
 // const readOneUserRouter = require("./routes/UsersCRUD/readOneUser");
 // const updateUserRouter = require("./routes/UsersCRUD/updateUser");
->>>>>>> ec46d277f224b860c581f4c8dc2c7899aa6f7dea
 // //Income
 // const createIncomeRouter = require("./routes/IncomesCRUD/createIncome");
 // const deleteIncomeRouter = require("./routes/IncomesCRUD/deleteIncome");
@@ -68,9 +59,8 @@ const allExpensesRouter = require("./routes/ExpensesCRUD/allExpenses");
 //index
 app.use("/", indexRouter);
 // //User
-<<<<<<< HEAD
 app.use('/', createUserRouter)
-// app.use('/', deleteUserRouter)
+app.use('/', deleteUserRouter)
 app.use('/', readOneUserRouter)
 app.use('/', updateUserRouter)
 // //Income
@@ -78,7 +68,6 @@ app.use('/', updateUserRouter)
 // app.use('/', deleteIncomeRouter)
 // app.use('/', readOneIncomeRouter)
 // app.use('/', updateIncomeRouter)
-=======
 // app.use("/", createUserRouter);
 // app.use("/", deleteUserRouter);
 // app.use("/", readOneUserRouter);
@@ -90,7 +79,6 @@ app.use('/', updateUserRouter)
 // app.use("/", updateIncomeRouter);
 // app.use("/", allIncomesRouter);
 
->>>>>>> ec46d277f224b860c581f4c8dc2c7899aa6f7dea
 // //Expense
 app.use("/", createExpenseRouter);
 app.use("/", deleteExpenseRouter);

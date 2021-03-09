@@ -7,7 +7,10 @@ const ExpensesModel = require("./../../models/ExpensesModel");
 router.get("/expenses", (req, res, next) => {
     ExpensesModel.find()
       .then((dbRes) => {
-        res.render("expenses/allExpenses.hbs", { expenses: dbRes });
+        res.render("expenses/allExpenses.hbs", {
+          expenses: dbRes,
+          style: "allEntries.css", 
+        });
       })
       .catch((err) => {
         next(err);

@@ -4,17 +4,18 @@ const IncomeModel = require("../../models/IncomeModel");
 
 //The page showing only the incomes
 
-router.get('/incomes', (req, res, next) => {
-    IncomeModel.find(req.body)
+router.get("/incomes", (req, res, next) => {
+  IncomeModel.find(req.body)
     .then((dbRes) => {
-        res.render('incomes/allIncomes', {incomes : dbRes})
+      res.render("incomes/allIncomes", {
+        incomes: dbRes,
+        style: "allEntries.css",
+      });
     })
     .catch((err) => {
-        console.log(err);
-        next(err);
-    })
-    
-})
-
+      console.log(err);
+      next(err);
+    });
+});
 
 module.exports = router;

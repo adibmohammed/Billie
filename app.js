@@ -27,8 +27,10 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "public")));
 hbs.registerPartials(path.join(__dirname, "views/partials"));
+
+const publicPath = path.resolve(__dirname, "public")
+app.use(express.static(publicPath));
 
 ///ROUTES
 //index
@@ -43,11 +45,11 @@ const updateUserRouter = require('./routes/UsersCRUD/updateUser')
 // const readOneUserRouter = require("./routes/UsersCRUD/readOneUser");
 // const updateUserRouter = require("./routes/UsersCRUD/updateUser");
 // //Income
-// const createIncomeRouter = require("./routes/IncomesCRUD/createIncome");
-// const deleteIncomeRouter = require("./routes/IncomesCRUD/deleteIncome");
-// const readOneIncomeRouter = require("./routes/IncomesCRUD/readOneIncome");
-// const updateIncomeRouter = require("./routes/IncomesCRUD/updateIncome");
-// const allIncomesRouter = require("./routes/IncomesCRUD/allIncomes");
+const createIncomeRouter = require("./routes/IncomesCRUD/createIncome");
+const deleteIncomeRouter = require("./routes/IncomesCRUD/deleteIncome");
+const readOneIncomeRouter = require("./routes/IncomesCRUD/readOneIncome");
+const updateIncomeRouter = require("./routes/IncomesCRUD/updateIncome");
+const allIncomesRouter = require("./routes/IncomesCRUD/allIncomes");
 
 // //Expense
 const createExpenseRouter = require("./routes/ExpensesCRUD/createExpense");
@@ -73,11 +75,11 @@ app.use('/', updateUserRouter)
 // app.use("/", readOneUserRouter);
 // app.use("/", updateUserRouter);
 // // //Income
-// app.use("/", createIncomeRouter);
-// app.use("/", deleteIncomeRouter);
-// app.use("/", readOneIncomeRouter);
-// app.use("/", updateIncomeRouter);
-// app.use("/", allIncomesRouter);
+app.use("/", createIncomeRouter);
+app.use("/", deleteIncomeRouter);
+app.use("/", readOneIncomeRouter);
+app.use("/", updateIncomeRouter);
+app.use("/", allIncomesRouter);
 
 // //Expense
 app.use("/", createExpenseRouter);

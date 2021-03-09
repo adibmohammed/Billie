@@ -1,17 +1,32 @@
 :root {
   --dark-purple: rgb(11, 8, 15);
+  --normal-orange: #ff821b;
+  --grey-text: rgb(65, 62, 62);
+  --font-size-table-text: 1.7vh;
 }
 
 body {
   background-color: var(--dark-purple);
 }
 
+h2 {
+  margin-bottom: 3vh;
+  font-size: 3vh;
+}
+
+a {
+  text-decoration: none;
+}
+
 /* The section whith title and table */
 section {
-  margin: 5vh;
+  margin: 7vh;
   background-color: white;
-  padding: 3vh;
+  padding: 6vh;
   border-radius: 3%;
+  display: flex;
+  flex-direction: column;
+  font-size: 10px;
 }
 
 /* The all table design */
@@ -19,24 +34,26 @@ table {
   table-layout: auto;
   width: 100%;
   margin: 2vh;
-  border: 1px solid black;
+  border-spacing: 1.5vh;
+  /* border: black 1px solid; */
 }
 
 thead {
-  color: black;
+  color: var(--grey-text);
   font-style: italic;
+  font-size: 1.8vh;
   text-align: left;
-  /* margin-bottom: 2vh; */
 }
+
 
 td {
   padding: 2vh;
-  border: black 1px solid;
   height: 7vh;
 }
 td > p {
   display: flex;
   align-items: center;
+  /* border: 1px border black; */
 }
 
 /* Designing individual td's */
@@ -47,7 +64,7 @@ p.cat-and-src {
 }
 
 p.amount {
-  font-size: 2vh;
+  font-size: var(--font-size-table-text);
   display: flex;
   justify-content: flex-end;
   flex-wrap: nowrap;
@@ -60,6 +77,13 @@ div.actions {
   padding: 1vh;
 }
 div.actions > a {
-    background-color: blue;
-    padding: 0.5vh;
+  /* background-color: blue; */
+  padding: 0.5vh;
+  margin: 0 0.5vh;
+  font-size: var(--font-size-table-text);
+  color: var(--normal-orange);
+}
+
+.title {
+  font-size: var(--font-size-table-text);
 }

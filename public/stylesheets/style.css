@@ -13,6 +13,7 @@
 body {
   padding: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  display: flex;
 }
 a {
   color: var(--light-blue);
@@ -20,8 +21,7 @@ a {
 
 #dashboard-page{
 display: flex;
-background-color: #111;
-}
+background-color: #111;}
 
 .main-content-dashboard{
   width: 100%;

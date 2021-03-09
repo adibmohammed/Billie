@@ -9,7 +9,7 @@ router.get("/expenses", (req, res, next) => {
       .then((dbRes) => {
         res.render("expenses/allExpenses.hbs", {
           expenses: dbRes,
-          style: "allEntries.css", 
+          style: "allEntries.css"
         });
       })
       .catch((err) => {

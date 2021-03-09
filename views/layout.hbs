@@ -4,11 +4,17 @@
 <head>
   <title>{{title}}</title>
   <link rel='stylesheet' href='/stylesheets/style.css' />
-  <link rel='stylesheet' href='/stylesheets/{{style}}'/>
+  <link rel='stylesheet' href='/stylesheets/{{style}}' />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+  <script src="/javascripts/{{js}}"></script>
 </head>
 
 <body>
+
+  <div id="dashboard-page"></div>
+  {{> topNavbar}}
+  {{> navBarSide}}
+  </div>
   {{{body}}}
 </body>
 

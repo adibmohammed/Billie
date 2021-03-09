@@ -8,7 +8,7 @@ router.get("/expenses/details/:id", (req, res) => {
     .then((expense) =>
       res.render("expenses/readExpense.hbs", {
         expense,
-        style: "readOneEntry.css",
+        style: ["readOneEntry.css"],
       })
     )
     .catch((err) => {

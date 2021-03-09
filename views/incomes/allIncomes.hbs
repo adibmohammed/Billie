@@ -12,7 +12,7 @@
         {{#each incomes}}
         <tbody>
                 <td>
-                    <p>{{this.date}}</p>
+                    <p>{{EuformatDate this.date}}</p>
                 </td> {{!Date format isn't good, still have the UNIX format!}}
                 <td><a href="/incomes/details/{{this._id}}">
                         <p class="title">{{this.title}}</p>
@@ -33,5 +33,3 @@
     </table>
 
 </section>
-
-<div><a href="/incomes/new">Add an income</a></div>

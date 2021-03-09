@@ -3,6 +3,9 @@ var router = new express.Router();
 console.log('yo')
 /* GET LANDING page. */
 router.get('/', function(req, res, next) {
-  res.render('index');
+  res.render('index.hbs', {
+    style: 'landing.css'
+  });
+
 });
 module.exports = router;

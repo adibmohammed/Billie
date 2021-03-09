@@ -14,7 +14,7 @@
             {{#each expenses}}
             <tr>
                 <td>
-                    <p>{{this.date}}</p>
+                    <p>{{EuformatDate this.date}}</p>
                 </td>
                 <td><a href="/expenses/details/{{this._id}}">
                         <p class="title">{{this.title}}</p>

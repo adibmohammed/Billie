@@ -11,6 +11,9 @@ hbs.registerHelper('titiOrToto', function() {
 hbs.registerHelper('formatDate', function(date) {
 	return moment(date).format('YYYY-MM-DD');
 });
+hbs.registerHelper('EuformatDate', function(date) {
+	return moment(date).format('DD-MM-YYYY');
+});
 
 hbs.registerHelper('toLowerCase', function(str) {
 	return str.toLowerCase();
@@ -79,6 +82,13 @@ hbs.registerHelper('compare', function(lvalue, rvalue, options) {
 	}
 });
 
-
-////HBS helper for date format
-
+//Select helper
+hbs.registerHelper("select", function(value, options) {
+	return options.fn(this)
+	  .split('\n')
+	  .map(function(v) {
+		var t = 'value="' + value + '"'
+		return ! RegExp(t).test(v) ? v : v.replace(t, t + ' selected="selected"')
+	  })
+	  .join('\n');
+  })

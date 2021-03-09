@@ -32,7 +32,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 hbs.registerPartials(path.join(__dirname, "views/partials"));
 
-const publicPath = path.resolve(__dirname, "public")
+const publicPath = path.resolve(__dirname, "public");
 app.use(express.static(publicPath));
 
 ///ROUTES

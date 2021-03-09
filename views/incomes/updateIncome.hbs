@@ -6,17 +6,19 @@
     <input name="title" id="title" type="text" value="{{incomeDetails.title}}"><br>
 
     <label for="source">Income source</label><br>
-    <select name="source" id="source" type="text" selected="{{incomeDetails.source}}"><br>
-        <option>Main Income</option>
-        <option>Secondary Income</option>
-        <option>Other</option>
+    <select name="source" id="source" type="text"><br>
+        {{#select incomeDetails.source}}
+        <option value="Main Income">Main Income</option>
+        <option value="Secondary Income">Secondary Income</option>
+        <option value="Other">Other</option>
+        {{/select}}
     </select><br>
 
     <label for="amount">How much ?</label><br>
     <input name="amount" id="amount" type="number" min="1" max="1000000000" value="{{incomeDetails.amount}}"><br>
 
     <label for="date">When did you receive the income ?</label><br>
-    <input name="date" id="date" type="date" value="{{incomeDetails.date}}"><br>
+    <input name="date" id="date" type="date" value="{{formatDate incomeDetails.date}}"><br>
 
     <label for="description">Modify the description</label><br>
     <textarea name="description" id="description" type="text">{{incomeDetails.description}}</textarea><br>

@@ -1,13 +1,16 @@
 const express = require("express");
 const router = express.Router();
 const IncomeModel = require("../../models/IncomeModel");
+const uploader = require('./../../config/cloudinary');
+const bcrypt = require('bcrypt');
 
 //GET route to update an existing a new income
 router.get("/incomes/edit/:id", async (req, res, next) => {
   try {
     const incomeDetails = await IncomeModel.findById(req.params.id);
-    // console.log(incomeDetails)
-    res.render("incomes/updateIncome", {incomeDetails});
+    res.render("incomes/updateIncome", {
+      incomeDetails,
+    });
   }
   catch (err) {
     next(err);
@@ -16,7 +19,7 @@ router.get("/incomes/edit/:id", async (req, res, next) => {
 });
 
 //POST route to send the new infos via a form
-router.post("/incomes/edit/:id", async (req, res, next) => {
+router.post("/incomes/edit/:id", uploader.single('picture'), async (req, res, next) => {
   try {
     const incomeToEdit = { ...req.body };
     console.log(req.body)

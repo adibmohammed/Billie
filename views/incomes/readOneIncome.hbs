@@ -1,10 +1,18 @@
-<h2>Find some more informations about your </h2>
+<section id="all-details">
+    <h2>More informations about your income</h2>
+    <div class="details">
+        <img src="{{income.picture}}" alt="Proof of Income">
+        <h3>{{income.title}}</h3>
+        <p class="cat-and-src">{{income.source}}</p>
+        <p>{{EuformatDate income.date}}</p>
+        <div class="amount">
+            <p>{{income.amount}}<span>&nbsp;</span>€</p>
+        </div>
 
-<div>
-    <img src="{{income.picture}}" alt="Proof of Expenses">
-    <h2>{{income.title}}</h2>
-    <p><i>{{income.category}}</i></p>
-    <p>{{income.date}}</p>
-    <p>{{income.amount}}</p>
-    <p>{{income.description}}</p>
-</div>
+        <div class="description">
+            <p>{{income.description}}</p>
+        </div>
+
+        <a class="go-back" href="/incomes"><b>Back</b></a>
+    </div>
+</section>

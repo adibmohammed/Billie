@@ -4,7 +4,9 @@ const IncomeModel = require("../../models/IncomeModel");
 
 //GET route to enter a new income
 router.get("/incomes/new", (req, res, next) => {
-  res.render("incomes/createIncome");
+  res.render("incomes/createIncome", {
+    style: "test.css",
+  });
 });
 
 //POST route to send the new income via a form

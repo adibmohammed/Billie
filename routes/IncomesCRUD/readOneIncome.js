@@ -7,7 +7,7 @@ router.get('/incomes/details/:id', (req, res, next) => {
     .then((dbRes) => {
         res.render('incomes/readOneIncome', {
             income : dbRes, 
-            style: 'readOneEntry.css'
+            style: ['readOneEntry.css']
         }); //rendering the details of selected income
     })
     .catch((err) => {

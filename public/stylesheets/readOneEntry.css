@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: var(--dark-purple);
+  background: var(--normal-orange);
 }
 
 h2 {
@@ -33,8 +33,11 @@ p {
 
 /*The section*/
 section {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
   margin-top: 60vh;
-  height: 600px;
+  height: 90vh;
   font-size: 10px;
   position: relative;
 }
@@ -59,10 +62,10 @@ p.cat-and-src {
 
 div.description {
   text-align: right;
-  padding: 2vh;
+  /* padding: 2vh; */
   margin-top: 2vh;
   width: 100%;
-  height: 30vh;
+  height: 10px;
   border-top: black 1px solid;
   font-style: italic;
   color: var(--grey-text);
@@ -77,11 +80,11 @@ div.amount {
   justify-content: center;
   display: flex;
   align-self: flex-end;
-  z-index: 1;
 }
 div.amount p {
   color: var(--normal-orange);
   font-size: 4.5vh;
+  margin-right: 5vh;
 }
 
 /*Back link*/
@@ -89,4 +92,8 @@ div.amount p {
   font-size: 3vh;
   position: absolute;
   bottom: 5%;
+}
+
+.fa-arrow-alt-circle-left {
+  margin-right: 1vh;
 }

@@ -1,40 +1,55 @@
-
-
-<form method="post" action="/signup" class="singnup-form" enctype="multipart/form-data">
 <div class="form-container">
-    <label for="firstname">First Name</label>
-<input type="text" name="firstname" id="firstname" value="Momo">
+
+<div class="title">
+    Registration
 </div>
+<form method="post" action="/signup" class="singnup-form" enctype="multipart/form-data">
+<div class="credentials">
 
+    <div class="input-box">
+<label for="firstname" class="label">First Name</label>
+<input type="text" name="firstname" id="firstname" value="Momo">
+    </div>
+    
 
-<div>
-    <label for="lastname">Last Name</label>
+<div class="input-box">
+    <label for="lastname" class="label">Last Name</label>
 <input type="text" name="lastname" id="lastname" value="test">
 </div>
 
 
-<div>
-    <label for="username">Username</label>
+<div class="input-box">
+    <label for="username" class="label">Username</label>
 <input type="text" name="username" id="username" value="test">
 </div>
 
 
-<div>
-    <label for="email">Email</label>
+<div class="input-box">
+    <label for="email" class="label">Email</label>
 <input type="text" name="email" id="name" value="test@test.com">
 </div>
 
 
-<div>
-    <label for="password">Password</label>
+<div class="input-box">
+    <label for="password" class="label">Password</label>
 <input type="password" name="password" id="password" value="123456">
 </div>
 
+<div class="input-box" id="uploader">
+    <label for="avatar" class="label">
+   Picture
+</label>
+<input type="file" name="avatar" id="avatar">
+</div>
+</div>
 
-<div>
-    <label for="profile"></label>
-<select name="profile" id="profile">
-    <option value="Family">Family</option>
+<div class="profile">
+    <div>
+    <label for="profile" class="profile-title">Profile Type</label>
+    
+<select name="profile" id="profile" class="selector">
+    
+    <option value="Family" >Family</option>
     <option value="Business">Business</option>
     <option value="Student">Student</option>
     <option value="Standard">Standard</option>
@@ -43,8 +58,8 @@
 
 
 <div>
-    <label for="gender"></label>
-<select name="gender" id="gender">
+    <label for="gender" class="profile-title">Gender</label>
+<select name="gender" id="gender" class="selector">
     <option value="Woman">Woman</option>
     <option value="Man">Man</option>
     <option value="Prefer Not To">Prefer Not To</option>
@@ -52,18 +67,25 @@
 </div>
 
 
-<div>
+</div>
+
+<div class="submit">
+{{!-- <div>
     <label for="avatar">
-    Choose a Profile Picture 
+    Picture
 </label>
 <input type="file" name="avatar" id="avatar">
-</div>
-
+</div> --}}
 
 <div>
-    <button>Create my account</button>
+    <button class="btn-submit">Create my account</button>
+</div>
 </div>
 
+
+
 </form>
+</div>
+
 
 

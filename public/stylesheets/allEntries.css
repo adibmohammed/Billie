@@ -1,4 +1,65 @@
+:root {
+  --dark-purple: rgb(11, 8, 15);
+}
 
 body {
-    background-color: aquamarine;
+  background-color: var(--dark-purple);
+}
+
+/* The section whith title and table */
+section {
+  margin: 5vh;
+  background-color: white;
+  padding: 3vh;
+  border-radius: 3%;
+}
+
+/* The all table design */
+table {
+  table-layout: auto;
+  width: 100%;
+  margin: 2vh;
+  border: 1px solid black;
+}
+
+thead {
+  color: black;
+  font-style: italic;
+  text-align: left;
+  /* margin-bottom: 2vh; */
+}
+
+td {
+  padding: 2vh;
+  border: black 1px solid;
+  height: 7vh;
+}
+td > p {
+  display: flex;
+  align-items: center;
+}
+
+/* Designing individual td's */
+p.cat-and-src {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+p.amount {
+  font-size: 2vh;
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+}
+
+div.actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  padding: 1vh;
+}
+div.actions > a {
+    background-color: blue;
+    padding: 0.5vh;
 }

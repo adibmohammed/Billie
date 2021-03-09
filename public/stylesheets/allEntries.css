@@ -1,12 +1,12 @@
 :root {
-  --dark-purple: rgb(11, 8, 15);
+  /* --dark-purple: rgb(11, 8, 15); */
   --normal-orange: #ff821b;
   --grey-text: rgb(65, 62, 62);
   --font-size-table-text: 1.7vh;
 }
 
 body {
-  background-color: var(--dark-purple);
+  background-color: var(--normal-orange);
 }
 
 h2 {

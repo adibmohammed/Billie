@@ -1,17 +1,17 @@
 <section id="all-details">
-    <h2>More informations about your expense</h2>
-    <div>
+    <h2>Don't worry, we all need to refresh our memory sometimes</h2>
+    <div class="details">
         <img src="{{expense.picture}}" alt="Proof of Expenses">
         <h3>{{expense.title}}</h3>
         <p class="cat-and-src">{{expense.category}}</p>
-        <p>{{EuformatDate expense.date}}</p>
+        <p><i class="far fa-calendar-alt"></i>{{EuformatDate expense.date}}</p>
         <div class="amount">
-            <p>{{expense.amount}}<span>&nbsp;</span>€</p>
+            <p class="swing-in-bottom-fwd">{{expense.amount}}<span>&nbsp;</span>€</p>
         </div>
 
         <div class="description">
             <p>{{expense.description}}</p>
         </div>
-        <a class="go-back" href="/expenses"><b>Back</b></a>
+        <a class="go-back" href="/expenses"><i class="fas fa-arrow-alt-circle-left"></i>Back</a>
     </div>
 </section>

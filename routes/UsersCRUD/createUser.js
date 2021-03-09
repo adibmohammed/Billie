@@ -6,7 +6,9 @@ const bcrypt = require('bcrypt');
 
 // GET Method for creationg user (form):
 router.get('/signup', (req, res, next) => {
-	res.render('Users/signup.hbs');
+	res.render('Users/signup.hbs', {
+		style: 'signup'
+	});
 });
 
 // POST Method for creationg a user (from form):

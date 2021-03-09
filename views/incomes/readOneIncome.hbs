@@ -1,18 +1,18 @@
 <section id="all-details">
-    <h2>More informations about your income</h2>
+    <h2>Don't worry, we all need to refresh our memory sometimes</h2>
     <div class="details">
         <img src="{{income.picture}}" alt="Proof of Income">
         <h3>{{income.title}}</h3>
         <p class="cat-and-src">{{income.source}}</p>
-        <p>{{EuformatDate income.date}}</p>
+        <p><i class="far fa-calendar-alt"></i>{{EuformatDate income.date}}</p>
         <div class="amount">
-            <p>{{income.amount}}<span>&nbsp;</span>€</p>
+            <p class="swing-in-bottom-fwd">{{income.amount}}<span>&nbsp;</span>€</p>
         </div>
 
         <div class="description">
             <p>{{income.description}}</p>
         </div>
 
-        <a class="go-back" href="/incomes"><b><i class="fas fa-arrow-alt-circle-left"></i>Back</b></a>
+        <a class="go-back" href="/incomes"><i class="fas fa-arrow-alt-circle-left"></i>Back</a>
     </div>
 </section>

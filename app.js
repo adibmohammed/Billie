@@ -33,77 +33,50 @@ app.use(cookieParser());
 hbs.registerPartials(path.join(__dirname, "views/partials"));
 
 const publicPath = path.resolve(__dirname, "public");
-//Flash Mechanism:
-
-app.use(flash());
-
-//Session Initialization:
-
-app.use(
-  session({
-    secret: "ASecretStringThatSouldBeHARDTOGUESS/CRACK",
-    saveUninitialized: true,
-    resave: true,
-  })
-);
-const publicPath = path.resolve(__dirname, "public")
 app.use(express.static(publicPath));
 
 ///ROUTES
-//index
+//Landing
 const indexRouter = require("./routes/index");
+//Dashboard
+const dashboardRouter = require("./routes/dashboard");
 //User
 const createUserRouter = require('./routes/UsersCRUD/createUser');
 const deleteUserRouter = require('./routes/UsersCRUD/deleteUsers');
 const readOneUserRouter = require('./routes/UsersCRUD/readOneUser');
 const updateUserRouter = require('./routes/UsersCRUD/updateUser');
 const logUser = require('./routes/UsersCRUD/signin');
-
-
-// //Income
+//Income
 const createIncomeRouter = require("./routes/IncomesCRUD/createIncome");
 const deleteIncomeRouter = require("./routes/IncomesCRUD/deleteIncome");
 const readOneIncomeRouter = require("./routes/IncomesCRUD/readOneIncome");
 const updateIncomeRouter = require("./routes/IncomesCRUD/updateIncome");
 const allIncomesRouter = require("./routes/IncomesCRUD/allIncomes");
 
-// //Expense
+//Expense
 const createExpenseRouter = require("./routes/ExpensesCRUD/createExpense");
 const deleteExpenseRouter = require("./routes/ExpensesCRUD/deleteExpense");
 const readOneExpenseRouter = require("./routes/ExpensesCRUD/readOneExpense");
 const updateExpenseRouter = require("./routes/ExpensesCRUD/updateExpense");
 const allExpensesRouter = require("./routes/ExpensesCRUD/allExpenses");
 
-//index
-
+//Landing
 app.use("/", indexRouter);
-// //User
-
-
+//Dashboard
+app.use("/", dashboardRouter);
+//User
 app.use('/', createUserRouter);
 app.use('/', deleteUserRouter);
 app.use('/', readOneUserRouter);
 app.use('/', updateUserRouter);
 app.use('/', logUser);
-
-
-// //Income
-// app.use('/', createIncomeRouter)
-// app.use('/', deleteIncomeRouter)
-// app.use('/', readOneIncomeRouter)
-// app.use('/', updateIncomeRouter)
-// app.use("/", createUserRouter);
-// app.use("/", deleteUserRouter);
-// app.use("/", readOneUserRouter);
-// app.use("/", updateUserRouter);
-// // //Income
+//Income
 app.use("/", createIncomeRouter);
 app.use("/", deleteIncomeRouter);
 app.use("/", readOneIncomeRouter);
 app.use("/", updateIncomeRouter);
 app.use("/", allIncomesRouter);
-
-// //Expense
+//Expense
 app.use("/", createExpenseRouter);
 app.use("/", deleteExpenseRouter);
 app.use("/", readOneExpenseRouter);

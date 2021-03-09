@@ -1,0 +1,116 @@
+#modalAddAll{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed; /* or absolute */
+    top: 15%;
+    left: 20%;
+    right: 20%;
+    z-index: 20;
+    width: 1000px;
+    height: 600px;
+  }
+.modalAddAll-content{
+    height: 600px;
+    position: relative;
+}
+.modalAddAll-content>h2{
+    text-align: center;
+    font-size: 32px;
+}
+
+/* .closeModalAddAll{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    right: 0%;
+} */
+
+.newEntryBtns{
+    height: 500px;
+    position: relative;
+}
+
+  #modalAddAll:after {
+    position: fixed;
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgb(174, 180, 238);
+    background: radial-gradient(circle, rgba(174, 180, 238,1) 0%, rgba(148,187,233,0.2413340336134454) 100%);
+    z-index: -20;
+  }
+  
+  #modalAddAll:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -10;
+  }
+
+  .fancy-btn-modalAll {
+	position: absolute;
+	display: inline-block;
+	text-decoration: none;
+    text-align: center;
+    padding: 4em 1em 3em 1em;
+	cursor: pointer;
+	user-select: none;
+    color: white;
+    margin: 3%;
+    width: 300px;
+    height: 250px;
+    font-size: 23px;
+
+  }
+.expense{
+    bottom: 0%;
+    left: 0%;
+}
+.income{
+    bottom: 0%;
+    right: 0%;
+}
+
+    .fancy-btn-modalAll:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+        right: 0;
+        background-image: url('/images/addIncome.jpg');
+		background: linear-gradient(135deg, #6e8efb, #a777e3);
+		border-radius: 4px;
+		transition: box-shadow .5s ease, transform .2s ease; 
+		will-change: transform;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+		transform:
+			translateY(var(--ty, 0))
+			rotateX(var(--rx, 0))
+			rotateY(var(--ry, 0))
+			translateZ(var(--tz, -12px));
+	}
+	
+	.fancy-btn-modalAll:hover:before {
+		box-shadow: 0 5px 15px rgba(0, 0, 0, .3);
+	}
+	
+	.fancy-btn-modalAll:after {
+		position: relative;
+		display: inline-block;
+		content: attr(data-title);
+		transition: transform .2s ease; 
+		font-weight: bold;
+		letter-spacing: .01em;
+		will-change: transform;
+		transform:
+			translateY(var(--ty, 0))
+			rotateX(var(--rx, 0))
+			rotateY(var(--ry, 0));
+	}

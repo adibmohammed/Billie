@@ -11,6 +11,9 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const hbs = require("hbs");
+const session = require("express-session");
+const flash = require("connect-flash")
+
 
 var helpers = require("./helpers/hbs");
 
@@ -30,14 +33,30 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 hbs.registerPartials(path.join(__dirname, "views/partials"));
 
+//Flash Mechanism:
+
+app.use(flash());
+
+//Session Initialization:
+
+app.use(
+  session({
+    secret: "ASecretStringThatSouldBeHARDTOGUESS/CRACK",
+    saveUninitialized: true,
+    resave: true,
+  })
+);
+
 ///ROUTES
 //index
 const indexRouter = require("./routes/index");
 //User
-const createUserRouter = require('./routes/UsersCRUD/createUser')
-const deleteUserRouter = require('./routes/UsersCRUD/deleteUsers')
-const readOneUserRouter = require('./routes/UsersCRUD/readOneUser')
-const updateUserRouter = require('./routes/UsersCRUD/updateUser')
+const createUserRouter = require('./routes/UsersCRUD/createUser');
+const deleteUserRouter = require('./routes/UsersCRUD/deleteUsers');
+const readOneUserRouter = require('./routes/UsersCRUD/readOneUser');
+const updateUserRouter = require('./routes/UsersCRUD/updateUser');
+const logUser = require('./routes/UsersCRUD/signin');
+
 // const createUserRouter = require("./routes/UsersCRUD/createUser");
 // const deleteUserRouter = require("./routes/UsersCRUD/deleteUsers");
 // const readOneUserRouter = require("./routes/UsersCRUD/readOneUser");
@@ -57,12 +76,18 @@ const updateExpenseRouter = require("./routes/ExpensesCRUD/updateExpense");
 const allExpensesRouter = require("./routes/ExpensesCRUD/allExpenses");
 
 //index
+
 app.use("/", indexRouter);
 // //User
-app.use('/', createUserRouter)
-app.use('/', deleteUserRouter)
-app.use('/', readOneUserRouter)
-app.use('/', updateUserRouter)
+
+
+app.use('/', createUserRouter);
+app.use('/', deleteUserRouter);
+app.use('/', readOneUserRouter);
+app.use('/', updateUserRouter);
+app.use('/', logUser);
+
+
 // //Income
 // app.use('/', createIncomeRouter)
 // app.use('/', deleteIncomeRouter)

@@ -18,12 +18,11 @@
 </head>
 
 <body>
-
-
+ {{#if isLoggedIn}}
   {{> topNavbar}}
   {{> navBarSide}}
-
-
+{{/if}}
+  </div>
   {{{body}}}
 </body>
 

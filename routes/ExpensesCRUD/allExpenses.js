@@ -1,10 +1,11 @@
 const express = require("express");
+const protectRoute = require("../../middlewares/protectRoute");
 const router = new express.Router();
 const ExpensesModel = require("./../../models/ExpensesModel");
 
 /* GET all expenses list */
 
-router.get("/expenses", (req, res, next) => {
+router.get("/expenses", protectRoute, (req, res, next) => {
     ExpensesModel.find()
       .then((dbRes) => {
         res.render("expenses/allExpenses.hbs", {

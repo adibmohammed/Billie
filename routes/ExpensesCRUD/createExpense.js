@@ -2,9 +2,10 @@ const express = require("express");
 const router = express.Router();
 const ExpensesModel = require("./../../models/ExpensesModel");
 const uploader = require("./../../config/cloudinary");
+const protectRoute = require('./../../middlewares/protectRoute');
 
 /* GET create expense */
-router.get("/expenses/new", (req, res, next) => {
+router.get("/expenses/new", protectRoute, (req, res, next) => {
   res.render("expenses/createExpense.hbs", {
     style: ["createOne.css", "modalAddAll.css"],
     js: ["modalAddAll.js"],

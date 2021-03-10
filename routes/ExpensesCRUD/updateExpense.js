@@ -2,10 +2,11 @@ const express = require("express");
 const router = new express.Router();
 const ExpensesModel = require("./../../models/ExpensesModel");
 const uploader = require("./../../config/cloudinary");
+const protectRoute = require('./../../middlewares/protectRoute');
 const path = require('path');
 
 /* GET edit expense */
-router.get("/expenses/update/:id", (req, res, next) => {
+router.get("/expenses/update/:id", protectRoute, (req, res, next) => {
   ExpensesModel.findById(req.params.id)
     .then((dbRes) => {
       res.render("expenses/updateExpense.hbs", {

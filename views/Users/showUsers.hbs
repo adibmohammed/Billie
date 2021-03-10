@@ -7,9 +7,9 @@
 <div class="dashboard">
 <div class="pshape">
 
-<div><img src="{{myUsers.avatar}}" alt="" class="circle"></div>
-<div><b>First Name:</b> {{myUsers.firstname}} <br><b>Last Name:</b>{{myUsers.lastname}}</div>
-<div>Username: {{myUsers.username}}</div>
+<div><img src="{{avatar}}" alt="" class="circle"></div>
+<div><b>First Name:</b> {{firstname}} <br><b>Last Name:</b>{{lastname}}</div>
+<div>Username: {{username}}</div>
 
 
 </div>
@@ -17,11 +17,11 @@
 
 <div class="btn-box">
     <div>
-<button class="btn"><a href="/users/update/{{myUsers._id}}">Update my credentials</a></button>
+<button class="btn"><a href="/users/update/{{_id}}">Update my credentials</a></button>
     </div>
     
     <div>
-    <button class="btn"><a href="/users/delete/{{myUsers._id}}">Remove my account</a></button>
+    <button class="btn"><a href="/users/delete/{{_id}}">Remove my account</a></button>
    </div>
 </div>
 

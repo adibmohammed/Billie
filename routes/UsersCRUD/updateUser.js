@@ -2,10 +2,11 @@ const express = require("express");
 const router = express.Router();
 const UsersModel = require("./../../models/UserModel");
 const uploader = require('./../../config/cloudinary');
+const protectRoute = require('./../../middlewares/protectRoute');
 
 // GET user id:
 
-router.get("/users/update/:id", (req, res, next) => {
+router.get("/users/update/:id", protectRoute, (req, res, next) => {
     UsersModel.findById(req.params.id)
     .then((user) => {res.render("Users/UserUpdate.hbs", user)
   console.log(user);

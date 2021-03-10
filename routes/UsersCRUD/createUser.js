@@ -4,6 +4,7 @@ const UsersModel = require('./../../models/UserModel');
 const uploader = require('./../../config/cloudinary');
 const bcrypt = require('bcrypt');
 
+
 // GET Method for creationg user (form):
 router.get('/signup', (req, res, next) => {
 	res.render('Users/signup.hbs', {
@@ -14,7 +15,7 @@ router.get('/signup', (req, res, next) => {
 // POST Method for creationg a user (from form):
 
 router.post('/signup', uploader.single('avatar'), async (req, res, next) => {
-	const { firstname, lastname, username, email, password, profile, gender, avatar } = req.body;
+	const { firstname, lastname, username, email, password, profile, gender, avatar, myexpense, myincome } = req.body;
 	console.log('Sign UP is working', req.body);
 
 	console.log('This is the avatar', avatar);
@@ -30,7 +31,7 @@ router.post('/signup', uploader.single('avatar'), async (req, res, next) => {
 			newUser.password = hashedPassword;
 			const dbRes = await UsersModel.create(newUser);
 			console.log('This is DbRes', dbRes);
-			res.redirect('/home');
+			res.redirect('/signin');
 		}
 	} catch (err) {
 		console.log(err);

@@ -2,10 +2,11 @@ const express = require("express");
 const router = express.Router();
 const IncomeModel = require("../../models/IncomeModel");
 const uploader = require('./../../config/cloudinary');
+const protectRoute = require('./../../middlewares/protectRoute');
 const path = require('path');
 
 //GET route to update an existing a new income
-router.get("/incomes/edit/:id", async (req, res, next) => {
+router.get("/incomes/edit/:id", protectRoute, async (req, res, next) => {
   try {
     const incomeDetails = await IncomeModel.findById(req.params.id);
     res.render("incomes/updateIncome", {

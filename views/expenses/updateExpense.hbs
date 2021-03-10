@@ -1,6 +1,6 @@
 <section id="create-container">
     <div class="create-container">
-        <h2 class="createTitle">Update Expense</h2>
+        <h2 class="createTitle">Made a mistake ? Edit it !</h2>
         <form method="post" action="/expenses/update/{{expense._id}}" class="formCreate" enctype="multipart/form-data">
             <label for="title">Title</label><br>
             <input name="title" id="title" type="text" placeholder="House Expenses" value="{{expense.title}}"><br>
@@ -26,7 +26,7 @@
             <label for="date">Date</label>
             <input name="date" id="date" type="date" value="{{formatDate expense.date}}">
             <label for="description">Add a description</label>
-            <textarea name="description" id="description" type="text" value="{{expense.description}}"></textarea>
+            <textarea name="description" id="description" type="text">{{expense.description}}</textarea>
             <div class="fileUpload">
                 <label for="picture">Upload a file</label>
                 <input name="picture" id="picture" type="file">

@@ -8,11 +8,14 @@ const path = require('path');
 router.get("/incomes/edit/:id", async (req, res, next) => {
   try {
     const incomeDetails = await IncomeModel.findById(req.params.id);
-    res.render("incomes/updateIncome", {incomeDetails, style:["createOne.css","modalAddAll.css"], js: ["modalAddAll.js"]});
+    res.render("incomes/updateIncome", {
+      incomeDetails, 
+      style:["createOne.css","modalAddAll.css"], 
+      js: ["modalAddAll.js"]
+    });
   }
   catch (err) {
     next(err);
-    console.log(err);
   }
 });
 
@@ -21,13 +24,13 @@ router.post("/incomes/edit/:id", uploader.single('picture'), async (req, res, ne
   const {title, source, amount, date, description} = req.body  
   try {
     
-    // console.log("hey" + req.body.picture)
     if (req.file && req.file.path) req.body.picture = req.file.path;
-    console.log(req.file)
 
-    await IncomeModel.findByIdAndUpdate(req.params.id, req.body, {new: true});
+    await IncomeModel.findByIdAndUpdate(req.params.id, req.body);
     res.redirect("/incomes"); //redirecting to the income itself to check the updated value
-  } catch (err) {next(err)};
+  } catch (err) {
+    next(err)
+  };
 });
 
 module.exports = router;

@@ -11,23 +11,23 @@
         </thead>
         {{#each incomes}}
         <tbody>
-                <td>
-                    <p>{{EuformatDate this.date}}</p>
-                </td> {{!Date format isn't good, still have the UNIX format!}}
-                <td><a href="/incomes/details/{{this._id}}">
-                        <p class="title">{{this.title}}</p>
-                    </a></td>
-                <td>
-                    <p class="cat-and-src">{{this.source}}</p>
-                </td>
-                <td>
-                    <p class="amount">{{this.amount}}<span>&nbsp;</span>€</p>
-                </td> {{!-- The weird span is for adding an unbreakable space --}}
-                <td class="actions-btn">
-                    <div class="actions btnIncomes">
-                        <a href="/incomes/edit/{{this._id}}"><i class="fas fa-pen"></i></a>
-                        <a href="/incomes/delete/{{this._id}}"><i class="fas fa-trash"></i></a>
-                </td>
+            <td>
+                <p>{{EuformatDate this.date}}</p>
+            </td>
+            <td><a href="/incomes/details/{{this._id}}">
+                    <p class="title">{{this.title}}</p>
+                </a></td>
+            <td>
+                <p class="cat-and-src">{{this.source}}</p>
+            </td>
+            <td>
+                <p class="amount">{{this.amount}}<span>&nbsp;</span>€</p>
+            </td> {{!-- The weird span is for adding an unbreakable space --}}
+            <td class="actions-btn">
+                <div class="actions btnIncomes">
+                    <a href="/incomes/edit/{{this._id}}"><i class="fas fa-pen"></i></a>
+                    <a href="/incomes/delete/{{this._id}}"><i class="fas fa-trash"></i></a>
+            </td>
         </tbody>
         {{/each}}
     </table>

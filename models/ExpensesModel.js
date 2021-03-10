@@ -33,7 +33,7 @@ const ExpensesSchema = new Schema({
   picture: {
     type: String,
     default:
-      "https://www.travelperk.com/wp-content/uploads/Guide_Managing-business-travel-expenses.png",
+      "https://res.cloudinary.com/djogypr9r/image/upload/v1615369163/Guide_Managing-business-travel-expenses_cxnwpz.png",
   },
 });
 

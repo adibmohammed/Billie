@@ -14,15 +14,28 @@ router.get("/users/update/:id", (req, res, next) => {
 
 // POST user id:
 
-router.post("/users/update/:id", uploader.single("avatar"), async (req, res, next) => {
+router.post("/users/update/:id", uploader.single('avatar'), async (req, res, next) => {
+   const {firstname, lastname, username, email, password, profile, gender, avatar} = req.body  
     try {
-        const newProfilePicture = {...req.body};
-        await UsersModel.findByIdAndUpdate(req.params.id, req.body)
-        res.redirect("/users")
+      
+      if (req.file && req.file.path) req.body.picture = req.file.path;
+  
+      await UsersModel.findByIdAndUpdate(req.params.id, req.body);
+      res.redirect("/users"); //redirecting to the income itself to check the updated value
     } catch (err) {
-        next (err)
-    }
-})
+      next(err)
+    };
+  });
+
+// router.post("/users/update/:id", uploader.single("avatar"), async (req, res, next) => {
+//     try {
+//         const newProfilePicture = {...req.body};
+//         await UsersModel.findByIdAndUpdate(req.params.id, req.body)
+//         res.redirect("/users")
+//     } catch (err) {
+//         next (err)
+//     }
+// })
 
 
 

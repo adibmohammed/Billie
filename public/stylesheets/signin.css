@@ -61,7 +61,7 @@ form .credentials .input-box {
 	margin: 5px 0 5px 0;
 	outline: none;
 	border-radius: 5px;
-	border: 1px solid #ccc;
+	border: 1px solid #2b32b2;
 	padding-left: 15px;
 	font-size: 16px;
 	border-bottom-width: 2px;
@@ -71,6 +71,7 @@ form .credentials .input-box {
 
 .credentials .input-box input:focus {
 	border-color: #39cccc;
+  
 }
 
 .label {

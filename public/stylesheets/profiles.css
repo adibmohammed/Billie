@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #1488cc; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to left, #2b32b2, #1488cc); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to left,
+		#2b32b2,
+		#1488cc
+	);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.pshape{
+    background: white;
+
+    background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.circle{
+    border-radius: 50%;
+    height: 50%;
+    width: 50%;
+}
+
+.btn-box{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.dashboard{
+    display: flex;
+    justify-content: first baseline;
+   
+
+    background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+    border-radius: 10px;
+}
+

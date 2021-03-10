@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-
 const bcrypt = require('bcrypt');
 
 const UserModel = require('./../../models/UserModel');
@@ -34,6 +33,7 @@ console.log("This is ", req.body);
             delete userObject.password;
 
             req.session.currentUser = userObject;
+            console.log("this is userobject", req.session);
 
             req.flash("success", "Welcome to your account");
             res.redirect('/home')

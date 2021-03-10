@@ -24,7 +24,7 @@ const userSchema = new Schema({
 	},
 	avatar: {
 		type: String,
-		default: 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png'
+		default: 'https://res.cloudinary.com/djogypr9r/image/upload/v1615377754/qcrteapita6niecfbf1y.jpg'
 	},
 	myexpense: { type: Schema.Types.ObjectId, ref: 'expenses' },
 	myincome: { type: Schema.Types.ObjectId, ref: 'income' }

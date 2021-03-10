@@ -8,7 +8,7 @@ const closeModalAddAll = document.getElementsByClassName("closeModalAddAll")[0];
 
 
 btnModalAll.addEventListener("click", function (event) {
-  modalAll.style.display = "block";
+  modalAll.style.display = "flex";
   modalAll.style.visibility = "visible";
 });
 

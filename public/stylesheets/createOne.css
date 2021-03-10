@@ -1,0 +1,110 @@
+#create-container {
+  display: flex;
+  background-color: #111;
+  width: 100%;
+}
+
+.create-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 800px;
+  position: relative;
+  left: 25%;
+}
+.createTitle {
+  margin-top: 10%;
+  margin-bottom: 5%;
+  color: white;
+  font-size: 32px;
+}
+.formCreate {
+  padding: 5%;
+  /* background-color: rgb(255, 255, 255); */
+  border-radius: 15px;
+  height: 100%;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  color: white;
+}
+.formCreate > label {
+  font-size: 18px;
+  padding: 10px;
+  color: white;
+}
+.formCreate > input {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: solid 1px orange;
+    color: white;
+  }
+  .formCreate > select {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: solid 1px orange;
+    color: white;
+  }
+  .formCreate > textarea {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: solid 1px orange;
+    color: white;
+  }
+  .fileUpload {
+	background: #1268EB;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	color: #fff;
+	font-size: 1em;
+	font-weight: bold;
+	margin: 1.25em auto;/*20px/16px 0*/
+	overflow: hidden;
+	padding: 0.875em;/*14px/16px*/
+	position: relative;
+	text-align: center;
+	width: 120px;
+   cursor: pointer;
+}
+.fileUpload:hover, .fileUpload:active, .fileUpload:focus {
+	background: #00b7ff;
+  cursor: pointer;
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    width: 148px;
+    height: 46px;
+  cursor: pointer;
+}
+
+input[type="file"] {
+    position: fixed;
+    right: 100%;
+    bottom: 100%;
+}
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+.createBtn{
+    padding: 10px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: solid 1px orange;
+    color: white;
+    background-color: orange;
+}

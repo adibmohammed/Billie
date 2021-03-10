@@ -1,29 +1,31 @@
-<h2>A little bit richer, yay !</h2>
+<section id="create-container">
+    <div class="create-container"></div>
+    <h2 class="createTitle">A little bit richer, yay !</h2>
+    <form method="post" action="/incomes/new" class="formCreate">
 
-<form method="post" action="/incomes/new">
+        <label for="title">Give your income a title</label>
+        <input name="title" id="title" type="text" placeholder="Christmas gift" value="test">
 
-    <label for="title">Give your income a title</label><br>
-    <input name="title" id="title" type="text" placeholder="Christmas gift" value="test"><br>
+        <label for="source">Income source</label>
+        <select name="source" id="source" type="text">
+            <option>Main Income</option>
+            <option>Secondary Income</option>
+            <option>Other</option>
+        </select><br>
 
-    <label for="source">Income source</label><br>
-    <select name="source" id="source" type="text"><br>
-        <option>Main Income</option>
-        <option>Secondary Income</option>
-        <option>Other</option>
-    </select><br>
+        <label for="amount">How much ?</label>
+        <input name="amount" id="amount" type="number" min="1" max="1000000000" placeholder="100" value="5">
 
-    <label for="amount">How much ?</label><br>
-    <input name="amount" id="amount" type="number" min="1" max="1000000000" placeholder="100" value="5"><br>
+        <label for="date">When did you receive the income ?</label>
+        <input name="date" id="date" type="date">
 
-    <label for="date">When did you receive the income ?</label><br>
-    <input name="date" id="date" type="date"><br>
+        <label for="description">Add a description</label>
+        <textarea name="description" id="description" type="text" placeholder="Grandma's gift for Christmas"
+            value="test"></textarea>
+        <div class="fileUpload"></div>
+        <label for="picture">Add a file</label>
+        <input name="picture" id="picture" type="file">
+        </div>
+        <button class="createBtn" type="submit">Add your new income</button>
 
-    <label for="description">Add a description</label><br>
-    <textarea name="description" id="description" type="text" placeholder="Grandma's gift for Christmas" value="test"></textarea><br>
-
-    <label for="picture">Add a file if necessary</label><br>
-    <input name="picture" id="picture" type="file"><br>
-
-    <button type="submit">Add your new income</button>
-
-</form>
+    </form>

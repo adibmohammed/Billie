@@ -9,7 +9,8 @@ router.get("/incomes", (req, res, next) => {
     .then((dbRes) => {
       res.render("incomes/allIncomes", {
         incomes: dbRes,
-        style: ["allEntries.css","modalAddAll.css"], js: ["modalAddAll.js"]
+        style: ["allEntries.css","modalAddAll.css"], 
+        js: ["modalAddAll.js"]
       });
     })
     .catch((err) => {

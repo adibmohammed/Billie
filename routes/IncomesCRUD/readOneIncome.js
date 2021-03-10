@@ -16,6 +16,4 @@ router.get('/incomes/details/:id', (req, res, next) => {
     })
 })
 
-
-
 module.exports = router;

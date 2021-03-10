@@ -7,6 +7,8 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const hbs = require("hbs");
 const session = require("express-session");
+const MongoStore = require("connect-mongo")(session);
+const mongoose = require("mongoose");
 const flash = require("connect-flash")
 
 var helpers = require("./helpers/hbs");
@@ -20,6 +22,7 @@ hbs.registerPartials(__dirname + "/views/partials")
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
 
+
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -28,7 +31,27 @@ hbs.registerPartials(path.join(__dirname, "views/partials"));
 
 const publicPath = path.resolve(__dirname, "public");
 app.use(express.static(publicPath));
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    cookie: {
+      maxAge: 60000
+    }, // in millisec
+    store: new MongoStore({
+      mongooseConnection: mongoose.connection,
+      ttl: 24 * 60 * 60 // 1 day
+    }),
+    saveUninitialized: true,
+    resave: true
+  })
+);
 
+app.use(flash());
+// CUSTOM MIDDLEWARES
+// expose flash message to the hbs templates, if any flash-message is defined
+app.use(require("./middlewares/exposeFlashMessage"));
+// expose login status to the hbs templates
+app.use(require("./middlewares/exposeLoginStatus"));
 ///ROUTES
 //Landing
 const indexRouter = require("./routes/index");

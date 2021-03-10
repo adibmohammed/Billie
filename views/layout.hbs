@@ -3,10 +3,13 @@
 
 <head>
   <title>{{title}}</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+  </style>
   <link rel='stylesheet' href='/stylesheets/style.css' />
-   {{#each style}}
+  {{#each style}}
   <link rel='stylesheet' href='/stylesheets/{{this}}' />
-    {{/each}}
+  {{/each}}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
   {{#each js}}
   <script type="module" src="/javascripts/{{this}}"></script>
@@ -17,10 +20,10 @@
 
   <div id="dashboard-page"></div>
 
-  
-  {{!-- {{> topNavbar}}
-  {{> navBarSide}} --}}
- 
+
+  {{> topNavbar}}
+  {{> navBarSide}}
+
   </div>
   {{{body}}}
 </body>

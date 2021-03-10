@@ -23,7 +23,7 @@
                     <p class="cat-and-src">{{this.category}}</p>
                 </td>
                 <td>
-                    <p class="amount">{{this.amount}}<span>&nbsp;</span>€</p>
+                    <p class="amount"><span class="dom-amount">{{this.amount}}</span><span>&nbsp;</span>€</p>
                 </td>
                 <td class="actions-btn">
                     <div class="actions btnExpenses">
@@ -34,6 +34,15 @@
             {{/each}}
         </tbody>
     </table>
+    <script>
+        var theAmount = document.querySelectorAll('dom-amount');
+        theAmount.forEach(amount => console.log(amount))
 
+        for (let i=1; i < table.rows.length; i++) {
+            let sum = 0;
+            sum += amount;
+        }
+        
+    </script>
 </section>
 {{> modalAddAll}}

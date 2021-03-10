@@ -7,7 +7,6 @@
 
 body {
   width: 100%;
-  background-color: whi;
 }
 
 h2 {
@@ -36,7 +35,7 @@ section {
 
 /* The all table design */
 table {
-  /* table-layout: auto; */
+  table-layout: auto;
   width: 100%;
   margin: 2vh;
   border-spacing: 1.5vh;
@@ -70,7 +69,6 @@ p.amount {
   font-size: 2.5vh;
   display: flex;
   justify-content: flex-end;
-  flex-wrap: nowrap;
 }
 
 div.actions {
@@ -80,7 +78,6 @@ div.actions {
   padding: 1vh;
 }
 div.actions > a {
-  /* background-color: blue; */
   padding: 0.5vh;
   margin: 0 0.5vh;
   font-size: var(--font-size-table-text);

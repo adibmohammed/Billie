@@ -1,6 +1,6 @@
 <h2>Made a mistake ? Edit it !</h2>
 
-<form method="post" action="/incomes/edit/{{incomeDetails._id}}">
+<form method="post" action="/incomes/edit/{{incomeDetails._id}}" enctype="multipart/form-data">
 
     <label for="title">Title</label><br>
     <input name="title" id="title" type="text" value="{{incomeDetails.title}}"><br>

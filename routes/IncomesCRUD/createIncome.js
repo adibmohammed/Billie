@@ -13,6 +13,9 @@ router.get("/incomes/new", (req, res, ) => {
 //POST route to send the new income via a form
 router.post("/incomes/new", uploader.single('picture'),async (req, res, next) => {
   const newIncome = { ...req.body };
+  if (!req.file) newIncome.picture = undefined;
+  else newIncome.picture = req.file.path;
+
   console.log(newIncome);
   try {
     await IncomeModel.create(newIncome);

@@ -4,7 +4,7 @@ const UsersModel = require("./../../models/UserModel");
 
 // GET users:
 
-router.get('/users/:id', function(req, res, next) {
+router.get('/users', function(req, res, next) {
     UsersModel.findById(req.params.id)
     .then((dbRes) => {
         res.render('Users/showUsers.hbs', {myUsers: dbRes, style: ['profiles.css']})

@@ -7,7 +7,10 @@ const uploader = require('./../../config/cloudinary');
 
 router.get("/users/update/:id", (req, res, next) => {
     UsersModel.findById(req.params.id)
-    .then((user) => res.render("Users/UserUpdate.hbs", user))
+    .then((user) => {res.render("Users/UserUpdate.hbs", user)
+  console.log(user);
+  })
+    
     .catch(next);
 
 })

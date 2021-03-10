@@ -1,25 +1,25 @@
 /* dashboard div containing all containers  */
 #main-content-dashboard {
     display: grid;
-    grid-template-columns: 47% 6% 47%;
+    grid-template-columns: 2% 47% 2% 47% 2%;
     grid-template-rows: 10% 30% 5% 55%;
     width: 100%;
 }
 .welcomeContainer {
   border: solid black 1px;
-  grid-column-start: 1;
+  grid-column-start: 2;
   grid-row-start: 2;
   grid-row-end: 3;
 }
 .expenseIcomeComparisonContainer {
   border: solid black 1px;
-  grid-column-start: 3;
-  grid-column-end: col3-end;
+  grid-column-start: 4;
+  grid-column-end: 4;
   grid-row-start: 2;
   grid-row-end: 3;
 }
 .chartsContainer {
     border: solid black 1px;
-    grid-column-start: 1;
+    grid-column-start: 2;
     grid-row-start: 4;
 }

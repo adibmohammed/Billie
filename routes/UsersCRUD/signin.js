@@ -8,7 +8,9 @@ const UserModel = require('./../../models/UserModel');
 // GET MEthod for signing in:
 
 router.get('/signin', (req, res, next) => {
-    res.render('Users/signin.hbs')
+    res.render('Users/signin.hbs', {
+        style: ['signin.css']
+    })
 });
 
 

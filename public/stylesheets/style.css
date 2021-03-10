@@ -200,3 +200,8 @@ background-color: #111;}
   transition: all 0.2s ease;
 }
 
+.auth{
+  color: white;
+  text-decoration: none;
+}
+

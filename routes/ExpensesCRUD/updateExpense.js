@@ -7,7 +7,7 @@ const uploader = require('./../../config/cloudinary');
 router.get("/expenses/update/:id", (req, res, next) => {
   ExpensesModel.findById(req.params.id)
     .then((dbRes) => {
-      res.render("expenses/updateExpense.hbs", { expense: dbRes });
+      res.render("expenses/updateExpense.hbs", { expense: dbRes, style:["createOne.css","modalAddAll.css"], js: ["modalAddAll.js"]});
     })
     .catch((err) => {
       next(err);

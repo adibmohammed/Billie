@@ -5,7 +5,7 @@ const ExpensesModel = require("./../../models/ExpensesModel");
 
 /* GET create expense */
 router.get("/expenses/new", (req, res, next) => {
-        res.render("expenses/createExpense.hbs",{style:["createOne.css"]});
+        res.render("expenses/createExpense.hbs",{style:["createOne.css","modalAddAll.css"], js: ["modalAddAll.js"]});
   });
 
 /* POST create expense */

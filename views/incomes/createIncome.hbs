@@ -1,31 +1,33 @@
 <section id="create-container">
-    <div class="create-container"></div>
-    <h2 class="createTitle">A little bit richer, yay !</h2>
-    <form method="post" action="/incomes/new" class="formCreate" enctype="multipart/form-data">
+    <div class="create-container">
+        <h2 class="createTitle">A little bit richer, yay !</h2>
+        <form method="post" action="/incomes/new" class="formCreate" enctype="multipart/form-data">
 
-        <label for="title">Give your income a title</label>
-        <input name="title" id="title" type="text" placeholder="Christmas gift" value="test">
+            <label for="title">Title</label>
+            <input name="title" id="title" type="text" placeholder="Christmas gift" value="test">
 
-        <label for="source">Income source</label>
-        <select name="source" id="source" type="text">
-            <option>Main Income</option>
-            <option>Secondary Income</option>
-            <option>Other</option>
-        </select><br>
+            <label for="source">Income source</label>
+            <select name="source" id="source" type="text">
+                <option>Main Income</option>
+                <option>Secondary Income</option>
+                <option>Other</option>
+            </select>
 
-        <label for="amount">How much ?</label>
-        <input name="amount" id="amount" type="number" min="1" max="1000000000" placeholder="100" value="5">
+            <label for="amount">Amount</label>
+            <input name="amount" id="amount" type="number" min="1" max="1000000000" placeholder="100" value="5">
 
-        <label for="date">When did you receive the income ?</label>
-        <input name="date" id="date" type="date">
+            <label for="date">Date</label>
+            <input name="date" id="date" type="date">
 
-        <label for="description">Add a description</label>
-        <textarea name="description" id="description" type="text" placeholder="Grandma's gift for Christmas"
-            value="test"></textarea>
-        <div class="fileUpload"></div>
-        <label for="picture">Add a file</label>
-        <input name="picture" id="picture" type="file">
+            <label for="description">Description</label>
+            <textarea name="description" id="description" type="text" placeholder="Grandma's gift for Christmas"
+                value="test"></textarea>
+            <div class="fileUpload">
+                <label for="picture">Upload a file</label>
+                <input name="picture" id="picture" type="file">
+            </div>
+            <button class="createBtn" type="submit">Add your new income</button>
+        </form>
         </div>
-        <button class="createBtn" type="submit">Add your new income</button>
-
-    </form>
+</section>
+{{> modalAddAll}}

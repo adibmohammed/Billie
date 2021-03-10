@@ -1,32 +1,38 @@
-<h1>Update Expense</h1>
-
-<form method="post" action="/expenses/update/{{expense._id}}" enctype="multipart/form-data">
-    <label for="title">Title</label><br>
-    <input name="title" id="title" type="text" placeholder="House Expenses" value="{{expense.title}}"><br>
-    <label for="category">Category</label><br>
-    <select name="category" id="category" type="text" value="{{expense.category}}"><br>
-        {{#select expense.category}}
-        <option value="Housing">Housing</option>
-        <option value="Health">Health</option>
-        <option value="Transportation">Transportation</option>
-        <option value="Groceries">Groceries</option>
-        <option value="Shopping">Shopping</option>
-        <option value="Car">Car</option>
-        <option value="Holidays">Holidays</option>
-        <option value="Accomodation">Accomodation</option>
-        <option value="Social Activities">Social Activities</option>
-        <option value="Restaurants-cafes">Restaurants-cafes</option>
-        <option value="Subscriptions">Subscriptions</option>
-        <option value="Other">Other</option>
-        {{/select}}
-    </select>
-    <label for="amount">How much ?</label>
-    <input name="amount" id="amount" type="number" min="1" max="1000000000" value="{{expense.amount}}">
-    <label for="date">When the expense was made ?</label>
-    <input name="date" id="date" type="date" value="{{formatDate expense.date}}">
-    <label for="description">Add a description</label>
-    <textarea name="description" id="description" type="text" value="{{expense.description}}"></textarea>
-    <label for="picture">Add a file if necessary</label>
-    <input name="picture" id="picture" type="file">
-    <button type="submit">Update</button>
-</form>
+<section id="create-container">
+    <div class="create-container">
+        <h2 class="createTitle">Update Expense</h2>
+        <form method="post" action="/expenses/update/{{expense._id}}" class="formCreate" enctype="multipart/form-data">
+            <label for="title">Title</label><br>
+            <input name="title" id="title" type="text" placeholder="House Expenses" value="{{expense.title}}"><br>
+            <label for="category">Category</label><br>
+            <select name="category" id="category" type="text" value="{{expense.category}}"><br>
+                {{#select expense.category}}
+                <option value="Housing">Housing</option>
+                <option value="Health">Health</option>
+                <option value="Transportation">Transportation</option>
+                <option value="Groceries">Groceries</option>
+                <option value="Shopping">Shopping</option>
+                <option value="Car">Car</option>
+                <option value="Holidays">Holidays</option>
+                <option value="Accomodation">Accomodation</option>
+                <option value="Social Activities">Social Activities</option>
+                <option value="Restaurants-cafes">Restaurants-cafes</option>
+                <option value="Subscriptions">Subscriptions</option>
+                <option value="Other">Other</option>
+                {{/select}}
+            </select>
+            <label for="amount">Amount</label>
+            <input name="amount" id="amount" type="number" min="1" max="1000000000" value="{{expense.amount}}">
+            <label for="date">Date</label>
+            <input name="date" id="date" type="date" value="{{formatDate expense.date}}">
+            <label for="description">Add a description</label>
+            <textarea name="description" id="description" type="text" value="{{expense.description}}"></textarea>
+            <div class="fileUpload">
+                <label for="picture">Upload a file</label>
+                <input name="picture" id="picture" type="file">
+            </div>
+            <button class="createBtn" type="submit">Update</button>
+        </form>
+    </div>
+</section>
+{{> modalAddAll}}

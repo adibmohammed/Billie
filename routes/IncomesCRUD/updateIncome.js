@@ -8,7 +8,7 @@ const path = require('path');
 router.get("/incomes/edit/:id", async (req, res, next) => {
   try {
     const incomeDetails = await IncomeModel.findById(req.params.id);
-    res.render("incomes/updateIncome", {incomeDetails});
+    res.render("incomes/updateIncome", {incomeDetails, style:["createOne.css","modalAddAll.css"], js: ["modalAddAll.js"]});
   }
   catch (err) {
     next(err);

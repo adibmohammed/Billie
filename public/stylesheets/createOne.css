@@ -1,58 +1,61 @@
 #create-container {
   display: flex;
-  background-color: #111;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100%;
 }
 
 .create-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 800px;
-  position: relative;
-  left: 25%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
 }
 .createTitle {
   margin-top: 10%;
   margin-bottom: 5%;
-  color: white;
+  color: rgb(82, 82, 82);
   font-size: 32px;
 }
 .formCreate {
   padding: 5%;
-  /* background-color: rgb(255, 255, 255); */
+  background-color: rgb(255, 255, 255);
+  box-shadow: -1px 2px 25px -6px #ff821b;
+-webkit-box-shadow: -1px 2px 25px -6px #ff821b;
+-moz-box-shadow: -1px 2px 25px -6px #ff821b;
   border-radius: 15px;
   height: 100%;
   display: flex;
   width: 100%;
   flex-direction: column;
-  color: white;
 }
 .formCreate > label {
   font-size: 18px;
   padding: 10px;
-  color: white;
 }
 .formCreate > input {
     padding: 10px;
     border-radius: 5px;
     background-color: transparent;
     border: solid 1px orange;
-    color: white;
+    font-size: 14px;
+    resize: vertical;
   }
   .formCreate > select {
     padding: 10px;
     border-radius: 5px;
     background-color: transparent;
     border: solid 1px orange;
-    color: white;
+    font-size: 14px;
   }
   .formCreate > textarea {
     padding: 10px;
     border-radius: 5px;
     background-color: transparent;
     border: solid 1px orange;
-    color: white;
+    font-size: 14px;
   }
   .fileUpload {
 	background: #1268EB;
@@ -64,11 +67,11 @@
 	font-weight: bold;
 	margin: 1.25em auto;/*20px/16px 0*/
 	overflow: hidden;
-	padding: 0.875em;/*14px/16px*/
+	padding:12px;
 	position: relative;
 	text-align: center;
 	width: 120px;
-   cursor: pointer;
+  cursor: pointer;
 }
 .fileUpload:hover, .fileUpload:active, .fileUpload:focus {
 	background: #00b7ff;
@@ -101,10 +104,20 @@ input[type="file"] {
     cursor: pointer;
 }
 .createBtn{
-    padding: 10px;
+    padding: 15px;
     border-radius: 5px;
-    background-color: transparent;
     border: solid 1px orange;
     color: white;
     background-color: orange;
+    font-size: 18px;
+}
+@media  screen and (max-width: 600px) {
+  #create-container{
+    width: 100%;
+    height: 100%;
+  }
+  .formCreate{
+    width: 100%;
+    height: 100%;
+  }
 }

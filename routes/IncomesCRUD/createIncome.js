@@ -6,7 +6,7 @@ const uploader = require('./../../config/cloudinary');
 //GET route to enter a new income
 router.get("/incomes/new", (req, res, ) => {
   res.render("incomes/createIncome", {
-    style: ["createOne.css"],
+    style: ["createOne.css","modalAddAll.css"], js: ["modalAddAll.js"]
   });
 });
 

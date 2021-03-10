@@ -2,10 +2,10 @@
     <div class="create-container">
         <h2 class="createTitle">Made a mistake ? Edit it !</h2>
         <form method="post" action="/expenses/update/{{expense._id}}" class="formCreate" enctype="multipart/form-data">
-            <label for="title">Title</label><br>
-            <input name="title" id="title" type="text" placeholder="House Expenses" value="{{expense.title}}"><br>
-            <label for="category">Category</label><br>
-            <select name="category" id="category" type="text" value="{{expense.category}}"><br>
+            <label for="title">Title</label>
+            <input name="title" id="title" type="text" placeholder="House Expenses" value="{{expense.title}}">
+            <label for="category">Category</label>
+            <select name="category" id="category" type="text">
                 {{#select expense.category}}
                 <option value="Housing">Housing</option>
                 <option value="Health">Health</option>

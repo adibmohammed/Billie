@@ -9,7 +9,8 @@ const hbs = require("hbs");
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const mongoose = require("mongoose");
-const flash = require("connect-flash")
+const flash = require("connect-flash");
+const chart = require('chart.js');
 
 var helpers = require("./helpers/hbs");
 

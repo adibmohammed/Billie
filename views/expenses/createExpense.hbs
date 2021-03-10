@@ -1,37 +1,43 @@
 <section id="create-container">
     <div class="create-container">
-<h2 class="createTitle">New Expense</h2>
-<form method="post" action="/expenses/new" class="formCreate" enctype="multipart/form-data">
-    <label for="title">Title</label>
-    <input name="title" id="title" type="text" placeholder="House Expenses" value="Expense 1">
-    <label for="category">Category</label>
-    <select name="category" id="category" type="text">
-        <option value="Housing">Housing</option>
-        <option value="Health">Health</option>
-        <option value="Transportation">Transportation</option>
-        <option value="Groceries">Groceries</option>
-        <option value="Shopping">Shopping</option>
-        <option value="Car">Car</option>
-        <option value="Holidays">Holidays</option>
-        <option value="Accomodation">Accomodation</option>
-        <option value="Social Activities">Social Activities</option>
-        <option value="Restaurants-cafes">Restaurants-cafes</option>
-        <option value="Subscriptions">Subscriptions</option>
-        <option value="Other">Other</option>
-    </select>
-    <label for="amount">Amount</label>
-    <input name="amount" id="amount" type="number" min="1" max="1000000000" placeholder="100" value="100">
-    <label for="date">Date</label>
-    <input name="date" id="date" type="date">
-    <label for="description">Add a description</label>
-    <textarea name="description" id="description" type="text" placeholder="Electricity, water, etc.."
-        value="test"></textarea>
-        <div class="fileUpload">
-    <label for="picture">Upload a file</label>
-    <input name="picture" id="picture" type="file">
+        <h2 class="createTitle">New Expense</h2>
+        <form method="post" action="/expenses/new" class="formCreate" enctype="multipart/form-data">
+            <label for="title">Title</label>
+            <input name="title" id="title" type="text" placeholder="House Expenses" value="Expense 1">
+            <label for="category">Category</label>
+            <select name="category" id="category" type="text">
+                <option value="Housing">Housing</option>
+                <option value="Health">Health</option>
+                <option value="Transportation">Transportation</option>
+                <option value="Groceries">Groceries</option>
+                <option value="Restaurants-cafes">Restaurants-cafes</option>
+                <option value="Other">Other</option>
+                {{#if isBusiness}}
+                <option value="Car">Car</option>
+                <option value="Accomodation">Accomodation</option>
+                {{/if}}
+                {{#if isFamily}}
+                <option value="Holidays">Holidays</option>
+                <option value="Shopping">Shopping</option>
+                {{/if}}
+                {{#if isStudent}}
+                <option value="Social Activities">Social Activities</option>
+                <option value="Subscriptions">Subscriptions</option>
+                {{/if}}
+            </select>
+            <label for="amount">Amount</label>
+            <input name="amount" id="amount" type="number" min="1" max="1000000000" placeholder="100" value="100">
+            <label for="date">Date</label>
+            <input name="date" id="date" type="date">
+            <label for="description">Add a description</label>
+            <textarea name="description" id="description" type="text" placeholder="Electricity, water, etc.."
+                value="test"></textarea>
+            <div class="fileUpload">
+                <label for="picture">Upload a file</label>
+                <input name="picture" id="picture" type="file">
+            </div>
+            <button class="createBtn" type="submit">Create</button>
+        </form>
     </div>
-    <button class="createBtn" type="submit">Create</button>
-</form>
-</div>
 </section>
 {{> modalAddAll}}

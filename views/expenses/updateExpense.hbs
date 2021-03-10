@@ -11,14 +11,20 @@
                 <option value="Health">Health</option>
                 <option value="Transportation">Transportation</option>
                 <option value="Groceries">Groceries</option>
-                <option value="Shopping">Shopping</option>
-                <option value="Car">Car</option>
-                <option value="Holidays">Holidays</option>
-                <option value="Accomodation">Accomodation</option>
-                <option value="Social Activities">Social Activities</option>
                 <option value="Restaurants-cafes">Restaurants-cafes</option>
-                <option value="Subscriptions">Subscriptions</option>
                 <option value="Other">Other</option>
+                {{#if isBusiness}}
+                <option value="Car">Car</option>
+                <option value="Accomodation">Accomodation</option>
+                {{/if}}
+                {{#if isFamily}}
+                <option value="Holidays">Holidays</option>
+                <option value="Shopping">Shopping</option>
+                {{/if}}
+                {{#if isStudent}}
+                <option value="Social Activities">Social Activities</option>
+                <option value="Subscriptions">Subscriptions</option>
+                {{/if}}
                 {{/select}}
             </select>
             <label for="amount">Amount</label>

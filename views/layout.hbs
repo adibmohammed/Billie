@@ -14,16 +14,14 @@
   {{#each js}}
   <script type="module" src="/javascripts/{{this}}"></script>
   {{/each}}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 </head>
 
 <body>
-
-  <div id="dashboard-page"></div>
-
-
+ {{#if isLoggedIn}}
   {{> topNavbar}}
   {{> navBarSide}}
-
+{{/if}}
   </div>
   {{{body}}}
 </body>

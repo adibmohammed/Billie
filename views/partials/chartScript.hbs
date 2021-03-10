@@ -1,0 +1,29 @@
+<div class="chartsContainer">
+    <p>Charts</p>
+    <canvas id="myChart" width="300" height="300"></canvas>
+    <script>
+        let myChart = document.getElementById('myChart').getContext('2d');
+
+        let massPopChart = new Chart(myChart, {
+            type: 'pie',
+            data: {
+                labels: ['Expenses', 'Incomes'],
+                datasets: [{
+                    label: 'Balance',
+                    data: [
+                        45,
+                        55,
+                    ],
+                    backgroundColor: [
+                        'orange',
+                        '#1268eb',
+                    ],
+                    hoverBorderWidth: 1,
+                    hoverBorderColor: '#000'
+                }],
+            },
+
+            options: {}
+        });
+    </script>
+</div>

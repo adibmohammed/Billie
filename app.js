@@ -1,5 +1,6 @@
 require("./config/mongodb");
 require("dotenv").config();
+require("./helpers/hbs");
 var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
@@ -53,6 +54,8 @@ app.use(flash());
 app.use(require("./middlewares/exposeFlashMessage"));
 // expose login status to the hbs templates
 app.use(require("./middlewares/exposeLoginStatus"));
+// protect routes
+
 ///ROUTES
 //Landing
 const indexRouter = require("./routes/index");

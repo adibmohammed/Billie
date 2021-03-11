@@ -9,8 +9,10 @@ const UserModel = require('./../../models/UserModel');
 
 router.get('/signin', (req, res, next) => {
 	res.render('Users/signin.hbs', {
+		
 		style: [ 'signin.css' ]
 	});
+	
 });
 
 // POST Method for signing in:
@@ -18,7 +20,7 @@ router.get('/signin', (req, res, next) => {
 router.post('/signin', async (req, res, next) => {
 	
 	
-	const { email, password, username, _id} = req.body;
+	const { email, password} = req.body;
 	
 	const foundUser = await UserModel.findOne({ email: email });
 	console.log('This is ', req.body);
@@ -44,7 +46,7 @@ router.post('/signin', async (req, res, next) => {
 			console.log('this is userobject', req.session);
 
 			req.flash('success', 'Welcome to your account');
-			res.redirect('home')
+			res.redirect('/home')
 			
 		}
 	}

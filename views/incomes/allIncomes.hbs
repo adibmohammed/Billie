@@ -1,7 +1,7 @@
 <div id="main-table">
 <section>
-    <h2>Your incomes</h2>
-    <table class="table table-striped table-bordered table-hover table-responsive">
+    <h2>Your incomes</h2><span>{{total}}</span>
+    <table class=" tableTest table table-striped table-bordered table-hover table-responsive">
         <thead>
             <tr>
                 <th>Date</th>
@@ -23,8 +23,8 @@
                 <td>
                     <p class="cat-and-src">{{this.source}}</p>
                 </td>
-                <td>
-                    <p class="dom-amount">{{this.amount}}<span>&nbsp;</span>€</p>
+                <td class="testColumn">
+                    <p class="amount"><span class="dom-amount-income">{{this.amount}}</span><span>&nbsp;</span>€</p>
                 </td> {{!-- The weird span is for adding an unbreakable space --}}
                 <td class="actions-btn">
                     <div class="actions btnIncomes">

@@ -14,29 +14,23 @@
 
 // /*SIMO*/
 
-let expensesArray = document.getElementsByClassName('swing-in-bottom-fwd').innerHTML;
-console.log("Expenses Array =" + expensesArray);
+let sum = 0;
 
-expensesArray.reduce((a,b) => a + b, 0);
+let expensesArray = document.querySelectorAll('dom-amount').innerHTML;
 
-document.getElementById('total-incomes').innerHTML = newSum;
-// let sum = 0;
+function sumFunction(a, b){
+ return a + b;
+}
 
-// 
-
-// function sumFunction(a, b){
-//  return a + b;
-// }
-
-// expensesArray.forEach( expensesArray => {
-//   sum = sumFunction(sum, expensesArray)
-// });
+expensesArray.forEach( expensesArray => {
+  sum = sumFunction(sum, expensesArray)
+});
 
 
 
 
 
-// 
+document.getElementById('total-incomes').innerHTML = sumFunction(expenesArray);
 
 
 // truc = sumFunction();

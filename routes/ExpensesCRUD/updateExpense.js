@@ -12,7 +12,7 @@ router.get("/expenses/update/:id", protectRoute, (req, res, next) => {
       res.render("expenses/updateExpense.hbs", {
         expense: dbRes,
         style: ["createOne.css", "modalAddAll.css"],
-        js: ["modalAddAll.js"],
+        js: ["modalAddAll.js", "totalTest.js"],
       });
     })
     .catch((err) => {

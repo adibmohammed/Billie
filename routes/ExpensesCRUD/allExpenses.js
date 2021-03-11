@@ -7,10 +7,10 @@ const ExpensesModel = require("./../../models/ExpensesModel");
 /* GET all expenses list */
 
 router.get("/expenses", protectRoute, (req, res, next) => {
-  // console.log(req.session.currentUser.id)
-  UserModel.findById(req.session.currentUser).populate('myexpense')
+  UserModel.findById(req.session.currentUser)
+    .populate("myexpense")
     .then((dbRes) => {
-      console.log(dbRes.myexpense)
+      console.log(dbRes.myexpense);
       res.render("expenses/allExpenses.hbs", {
         expenses: dbRes.myexpense,
         style: ["allEntries.css", "modalAddAll.css"],

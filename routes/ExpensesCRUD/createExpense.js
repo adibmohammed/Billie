@@ -9,7 +9,7 @@ const protectRoute = require('./../../middlewares/protectRoute');
 router.get("/expenses/new", protectRoute, (req, res, next) => {
   res.render("expenses/createExpense.hbs", {
     style: ["createOne.css", "modalAddAll.css"],
-    js: ["modalAddAll.js"],
+    js: ["modalAddAll.js", "totalTest.js"],
   });
 });
 

@@ -12,7 +12,7 @@ router.get("/incomes/edit/:id", protectRoute, async (req, res, next) => {
     res.render("incomes/updateIncome", {
       incomeDetails, 
       style:["createOne.css","modalAddAll.css"], 
-      js: ["modalAddAll.js"]
+      js: ["modalAddAll.js", "totalTest.js"]
     });
   }
   catch (err) {

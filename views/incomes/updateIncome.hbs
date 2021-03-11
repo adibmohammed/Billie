@@ -17,7 +17,7 @@
             </select>
 
             <label for="amount">Amount</label>
-            <input name="amount" id="amount" type="number" min="1" max="1000000000" value="{{incomeDetails.amount}}">
+            <input name="amount" id="amount" type="number" min="1" max="1000000000" step=".01" value="{{incomeDetails.amount}}">
 
             <label for="date">Date</label>
             <input name="date" id="date" type="date" value="{{formatDate incomeDetails.date}}">

@@ -5,7 +5,7 @@ var router = express.Router();
 router.get("/home", protectRoute, function (req, res, next) {
   res.render("dashboard", {
     style: ["modalAddAll.css", "dashboard.css"],
-    js: ["modalAddAll.js"],
+    js: ["modalAddAll.js", "totalTest.js"],
   });
 });
 

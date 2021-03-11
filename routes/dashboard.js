@@ -13,7 +13,7 @@ router.get("/home", protectRoute, function (req, res, next) {
         js: ["modalAddAll.js"],
         totalExp: parseFloat(dbRes.myexpense.reduce((acc, val) => acc + val.amount, 0)).toFixed(2),
         totalInc: parseFloat(dbRes.myincome.reduce((acc, val) => acc + val.amount, 0)).toFixed(2),
-        totalBudg : (dbRes.myexpense.reduce((acc, val) => acc + val.amount, 0) + dbRes.myincome.reduce((acc, val) => acc + val.amount, 0)),
+        totalBudg : (dbRes.myincome.reduce((acc, val) => acc + val.amount, 0) - dbRes.myexpense.reduce((acc, val) => acc + val.amount, 0)).toFixed(2),
         byDateExp: dbRes.myexpense.date,
         byDateInc: dbRes.myincome.date, 
       });

@@ -10,7 +10,7 @@ const changeCategories=require("./../../middlewares/exposeExpenseCategories");
 
 
 //GET route to update an existing a new income
-router.get("/incomes/edit/:id", protectRoute, changeCategories, async (req, res, next) => {
+router.get("/incomes/update/:id", protectRoute, changeCategories, async (req, res, next) => {
   try {
     const incomeDetails = await IncomeModel.findById(req.params.id);
     res.render("incomes/updateIncome", {
@@ -25,7 +25,7 @@ router.get("/incomes/edit/:id", protectRoute, changeCategories, async (req, res,
 });
 
 //POST route to send the new infos via a form
-router.post("/incomes/edit/:id", uploader.single('picture'), async (req, res, next) => {
+router.post("/incomes/update/:id", uploader.single('picture'), async (req, res, next) => {
   const {title, source, amount, date, description} = req.body  
   try {
     

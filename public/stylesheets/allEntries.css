@@ -96,6 +96,14 @@ div.actions > a {
   font-size: var(--font-size-table-text);
 }
 
+#expense-total {
+  color: #eb1d1d;
+}
+#incomes-total{
+  color: #1deb9c;
+  text-shadow: rgba(0, 0, 0, 0.37) 0.5px 0.7px 0.5px;
+}
+
 /*RESPONSIVE*/
 @media screen and (max-width: 600px) {
   section {

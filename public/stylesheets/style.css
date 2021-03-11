@@ -211,3 +211,24 @@ a {
   color: white;
   text-decoration: none;
 }
+<<<<<<< HEAD
+
+@media (max-width: 1293px){
+  body{
+    max-width: 100%;
+    
+  }
+  .main-img{
+    max-width: 500px;
+    position: absolute;
+  }
+}
+
+@media (min-width: 1523px ){
+  .main-img{
+    max-width: 1000px;
+    position: absolute;
+  }
+}
+=======
+>>>>>>> a09ecffa7535c6aa5afe72fba248577f8f5d9e31

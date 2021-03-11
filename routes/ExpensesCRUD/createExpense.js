@@ -28,6 +28,11 @@ router.post("/expenses/new", uploader.single('picture'), async (req, res, next) 
       req.session.currentUser._id,
       { $push: { myexpense: theExpense._id } }
     );
+
+//     let thing = await ExpensesModel.findByIdAndUpdate(
+//       (req.params.id = { $push: { userId: req.session.currentUser._id } })
+//      );
+
     res.redirect("/expenses"); //redirecting to the list of incomes only
     return userExpense;
   } catch (err) {

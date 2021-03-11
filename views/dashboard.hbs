@@ -14,12 +14,18 @@
                 <a href="/users/delete/{{currentUser._id}}">Remove your account</a>
             </div>
         </div>
+        
     </div>
     <div id="expenseIncomeComparisonContainer">
         <p>Comparison</p>
         <div id="total-incomes">{{total}}</div>
         <div id="total-expenses"></div>
     </div>
+
+    <div class="weather-container">
+       {{> weatherWidget}}
+    </div>
     {{> chartScript}}
+    
 </div>
 {{> modalAddAll}}

@@ -211,6 +211,10 @@ a {
   color: white;
   text-decoration: none;
 }
+.weather-container{
+  width: 400px;
+  height: 50px;
+}
 
 @media (max-width: 1293px){
   body{

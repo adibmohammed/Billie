@@ -19,7 +19,8 @@ router.get('/signin', (req, res, next) => {
 
 router.post('/signin', async (req, res, next) => {
 	
-	const { email, password} = req.body;
+	
+	const { email, password, username, _id} = req.body;
 	
 	const foundUser = await UserModel.findOne({ email: email });
 	console.log('This is ', req.body);

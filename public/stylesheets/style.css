@@ -206,3 +206,20 @@ background-color: #111;}
   text-decoration: none;
 }
 
+@media (max-width: 1293px){
+  body{
+    max-width: 100%;
+    
+  }
+  .main-img{
+    max-width: 500px;
+    position: absolute;
+  }
+}
+
+@media (min-width: 1523px ){
+  .main-img{
+    max-width: 1000px;
+    position: absolute;
+  }
+}

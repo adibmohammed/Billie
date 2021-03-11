@@ -5,8 +5,11 @@ const ExpensesModel = require("./../../models/ExpensesModel");
 const uploader = require("./../../config/cloudinary");
 const protectRoute = require('./../../middlewares/protectRoute');
 
+//hide categories foe expenses
+const changeCategories=require("./../../middlewares/exposeExpenseCategories");
+
 /* GET create expense */
-router.get("/expenses/new", protectRoute, (req, res, next) => {
+router.get("/expenses/new", protectRoute, changeCategories, (req, res, next) => {
   res.render("expenses/createExpense.hbs", {
     style: ["createOne.css", "modalAddAll.css"],
     js: ["modalAddAll.js"],

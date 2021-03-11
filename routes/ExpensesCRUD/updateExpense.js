@@ -4,9 +4,11 @@ const ExpensesModel = require("./../../models/ExpensesModel");
 const uploader = require("./../../config/cloudinary");
 const protectRoute = require('./../../middlewares/protectRoute');
 const path = require('path');
+//hide categories foe expenses
+const changeCategories=require("./../../middlewares/exposeExpenseCategories");
 
 /* GET edit expense */
-router.get("/expenses/update/:id", protectRoute, (req, res, next) => {
+router.get("/expenses/update/:id", protectRoute,changeCategories, (req, res, next) => {
   ExpensesModel.findById(req.params.id)
     .then((dbRes) => {
       res.render("expenses/updateExpense.hbs", {

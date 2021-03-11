@@ -5,8 +5,12 @@ const uploader = require('./../../config/cloudinary');
 const protectRoute = require('./../../middlewares/protectRoute');
 const path = require('path');
 
+//hide categories foe expenses
+const changeCategories=require("./../../middlewares/exposeExpenseCategories");
+
+
 //GET route to update an existing a new income
-router.get("/incomes/edit/:id", protectRoute, async (req, res, next) => {
+router.get("/incomes/edit/:id", protectRoute, changeCategories, async (req, res, next) => {
   try {
     const incomeDetails = await IncomeModel.findById(req.params.id);
     res.render("incomes/updateIncome", {

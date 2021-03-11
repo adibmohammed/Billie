@@ -9,7 +9,6 @@ router.get('/users/:id', protectRoute, function(req, res, next) {
     UsersModel.findById(req.params.id)
     .then((dbRes) => {
         res.render('Users/showUsers.hbs', {myUsers: dbRes, style: ['profiles.css']})
-        
     })
     .catch((dbError) => {
         next(dbError)

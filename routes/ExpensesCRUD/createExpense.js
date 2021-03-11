@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const UserModel = require("../../models/UserModel");
 const ExpensesModel = require("./../../models/ExpensesModel");
 const uploader = require("./../../config/cloudinary");
 const protectRoute = require('./../../middlewares/protectRoute');
@@ -22,8 +23,13 @@ router.post("/expenses/new", uploader.single('picture'), async (req, res, next) 
   else newExpense.picture = req.file.path;
 
   try {
-    await ExpensesModel.create(newExpense);
+    const theExpense = await ExpensesModel.create(newExpense);
+    let userExpense = UserModel.findByIdAndUpdate(
+      req.session.currentUser._id,
+      { $push: { myexpense: theExpense._id } }
+    );
     res.redirect("/expenses"); //redirecting to the list of incomes only
+    return userExpense;
   } catch (err) {
     console.log(err);
     next(err);

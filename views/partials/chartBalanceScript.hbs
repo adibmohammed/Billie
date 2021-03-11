@@ -1,0 +1,27 @@
+<canvas id="myChart"></canvas>
+<script>
+    let myChart = document.getElementById('myChart').getContext('2d');
+
+    let balanceChart = new Chart(myChart, {
+        type: 'doughnut',
+        data: {
+            labels: ['Expenses', 'Incomes'],
+            datasets: [{
+                label: 'Balance',
+                data: [
+                    {{ totalExp }},
+            {{ totalInc }},
+                    ],
+    backgroundColor: [
+        'orange',
+        '#1268eb',
+    ],
+        hoverBorderWidth: 1,
+            hoverBorderColor: '#000'
+                }],
+            },
+
+    options: { }
+        });
+</script>
+</div>

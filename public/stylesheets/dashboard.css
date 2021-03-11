@@ -1,25 +1,66 @@
 /* dashboard div containing all containers  */
 #main-content-dashboard {
-    display: grid;
-    grid-template-columns: 2% 47% 2% 47% 2%;
-    grid-template-rows: 10% 30% 5% 55%;
-    width: 100%;
+  display: grid;
+  grid-template-columns: 2% 47% 2% 47% 2%;
+  grid-template-rows: 10% 30% 5% 55%;
+  width: 100%;
 }
 .welcomeContainer {
-  border: solid black 1px;
   grid-column-start: 2;
   grid-row-start: 2;
   grid-row-end: 3;
+  background-color: rgb(255, 255, 255);
+  box-shadow: -1px 2px 25px -6px #ff821b;
+  -webkit-box-shadow: -1px 2px 25px -6px #ff821b;
+  -moz-box-shadow: -1px 2px 25px -6px #ff821b;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2vh;
+  line-height: 3.5vh;
 }
-.expenseIcomeComparisonContainer {
-  border: solid black 1px;
+.expenseIncomeComparisonContainer {
   grid-column-start: 4;
   grid-column-end: 4;
   grid-row-start: 2;
   grid-row-end: 3;
+  background-color: rgb(255, 255, 255);
+  box-shadow: -1px 2px 25px -6px #ff821b;
+  -webkit-box-shadow: -1px 2px 25px -6px #ff821b;
+  -moz-box-shadow: -1px 2px 25px -6px #ff821b;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .chartsContainer {
-    border: solid black 1px;
-    grid-column-start: 2;
-    grid-row-start: 4;
+  grid-column-start: 2;
+  grid-row-start: 4;
+  background-color: rgb(255, 255, 255);
+  box-shadow: -1px 2px 25px -6px #ff821b;
+  -webkit-box-shadow: -1px 2px 25px -6px #ff821b;
+  -moz-box-shadow: -1px 2px 25px -6px #ff821b;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CHART CONTAINER  */
+#myChart{
+  width: 300px;
+  height: 300px
+}
+
+/*Text design*/
+
+a {
+  text-decoration: none;
+  font-size: 2vh;
+}
+
+img.circle {
+  width: 9vh;
 }

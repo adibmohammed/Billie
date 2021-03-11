@@ -1,5 +1,5 @@
 :root {
-  --deep-blue : #1268EB;
+  --deep-blue: #1268eb;
   --light-blue: #00b7ff;
 }
 
@@ -7,7 +7,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   /* transition: all 0.2s ease; */
 }
 
@@ -20,11 +20,12 @@ a {
   color: var(--light-blue);
 }
 
-#dashboard-page{
-display: flex;
-background-color: #111;}
+#dashboard-page {
+  display: flex;
+  background-color: #111;
+}
 
-.main-content-dashboard{
+.main-content-dashboard {
   width: 100%;
   margin-left: 10px;
   color: black;
@@ -38,15 +39,19 @@ background-color: #111;}
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  width : 100%;
+  width: 100%;
   height: 4em;
   padding: 1em;
 }
 
 .signout a {
-  color: #fff;
+  padding: 10px;
+  border: 1px solid blue;
+  border-radius: 5px;
+  font-size: 18px;
+  color: blue;
+  margin: 20px;
   text-decoration: none;
-  margin: 1.5em;
 }
 
 .profile-icon {
@@ -55,19 +60,20 @@ background-color: #111;}
 }
 
 #search-icon {
-  font-size: 1.3em;
-  color: #fff;
-  margin: 3px;
+  font-size: 25px;
+  color: #f4a540;
+  margin: 15px;
 }
 
-#search-bar {
-  border: none;
-  border-radius: 5%;
-  background-color:#ffffff;
-  color: var(--deep-blue);
-  padding: 0.4em;
+#top-bar >input {
+  background-color: #ffffff;
   margin: 0 2em;
-  width: 40%;
+  width: 20%;
+  padding: 8px;
+  border: 1px solid orange;
+  border-radius: 20px;
+  color: orange;
+  font-size: 15px;
 }
 
 /* LEFT SIDE MENU */
@@ -201,10 +207,11 @@ background-color: #111;}
   transition: all 0.2s ease;
 }
 
-.auth{
+.auth {
   color: white;
   text-decoration: none;
 }
+<<<<<<< HEAD
 
 @media (max-width: 1293px){
   body{
@@ -223,3 +230,5 @@ background-color: #111;}
     position: absolute;
   }
 }
+=======
+>>>>>>> a09ecffa7535c6aa5afe72fba248577f8f5d9e31

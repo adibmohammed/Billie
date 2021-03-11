@@ -10,6 +10,7 @@ router.get("/expenses/details/:id", protectRoute, (req, res) => {
       res.render("expenses/readExpense.hbs", {
         expense,
         style: ["readOneEntry.css"],
+        js: ["modalAddAll.js", "totalTest.js"],
       })
     )
     .catch((err) => {

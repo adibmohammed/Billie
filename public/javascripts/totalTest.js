@@ -2,30 +2,42 @@
 
 // let array = [];
 
-console.log(document.querySelectorAll('.dom-amount'))
+// console.log(document.querySelectorAll('.dom-amount'))
 
-let array2 = document.querySelectorAll('.dom-amount').reduce((a, b) => {
-  return a + b;
-}, 0);
+// let array2 = document.querySelectorAll('.dom-amount').reduce((a, b) => {
+//   return a + b;
+// }, 0);
 
-document.querySlector('total-incomes').innerHTML = array2;
+// document.querySlector('total-incomes').innerHTML = array2;
 
 // // console.log(array2)
 
 // /*SIMO*/
 
-// console.log(document.querySelectorAll('dom-amount').innerHTML)
+let expensesArray = document.getElementsByClassName('swing-in-bottom-fwd').innerHTML;
+console.log("Expenses Array =" + expensesArray);
 
-// let expensesArray = [0];
-// document.getElementsByClassName('dom-amount').innerHTML
-// expensesArray.reduce(sumFunction);
+expensesArray.reduce((a,b) => a + b, 0);
+
+document.getElementById('total-incomes').innerHTML = newSum;
+// let sum = 0;
+
+// 
 
 // function sumFunction(a, b){
-//   let mySum = a + b;
-//   return mySum;
+//  return a + b;
 // }
 
-// let truc = document.getElementById('total-incomes').innerHTML;
+// expensesArray.forEach( expensesArray => {
+//   sum = sumFunction(sum, expensesArray)
+// });
+
+
+
+
+
+// 
+
 
 // truc = sumFunction();
 // console.log(truc)

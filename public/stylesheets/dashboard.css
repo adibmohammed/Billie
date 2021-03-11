@@ -21,7 +21,7 @@
   padding: 2vh;
   line-height: 3.5vh;
 }
-.expenseIncomeComparisonContainer {
+#expenseIncomeComparisonContainer {
   grid-column-start: 4;
   grid-column-end: 4;
   grid-row-start: 2;

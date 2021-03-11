@@ -14,6 +14,7 @@ router.get("/incomes", protectRoute, (req, res, next) => {
         incomes: dbRes.myincome,
         style: ["allEntries.css", "modalAddAll.css"],
         js: ["modalAddAll.js"],
+        total: dbRes.myincome.reduce((acc,val)=>acc + val.amount,0)
       });
     })
     .catch((err) => {

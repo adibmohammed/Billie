@@ -45,7 +45,7 @@ router.post('/signin', async (req, res, next) => {
 			console.log('this is userobject', req.session);
 
 			req.flash('success', 'Welcome to your account');
-			res.render('Users/showUsers.hbs')
+			res.redirect('home')
 			
 		}
 	}

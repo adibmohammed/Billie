@@ -2,21 +2,20 @@
     <div class="welcomeContainer">
         <p>Welcome, <i>{{currentUser.username}}</i></p>
         <div><img src="{{currentUser.avatar}}" alt="avatar" class="circle"></div>
-        <div><b>First name:</b> {{currentUser.firstname}} <br>
-            <b>Last name:</b> {{currentUser.lastname}}
+        <div><b>First name :</b> {{currentUser.firstname}} <br>
+            <b>Last name :</b> {{currentUser.lastname}}
         </div>
-        <div>Username: {{currentUser.username}}</div>
         <div class="btn-box">
             <div>
-                <button class="btn"><a href="/users/update/{{currentUser._id}}">Update my credentials</a></button>
+                <a href="/users/update/{{currentUser._id}}">Update your profile</a>
             </div>
 
             <div>
-                <button class="btn"><a href="/users/delete/{{currentUser._id}}">Remove my account</a></button>
+                <a href="/users/delete/{{currentUser._id}}">Remove your account</a>
             </div>
         </div>
     </div>
-    <div class="expenseIcomeComparisonContainer">
+    <div class="expenseIncomeComparisonContainer">
         <p>Comparison</p>
     </div>
     {{> chartScript}}

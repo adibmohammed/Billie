@@ -8,7 +8,7 @@ const protectRoute = require('./../../middlewares/protectRoute');
 
 router.get("/users/update/:id", protectRoute, (req, res, next) => {
     UsersModel.findById(req.params.id)
-    .then((user) => {res.render("Users/UserUpdate.hbs", user)
+    .then((user) => {res.render("Users/UserUpdate.hbs",{user, style:['updateUser.css']});
   console.log(user);
   })
     
@@ -25,7 +25,7 @@ router.post("/users/update/:id", uploader.single('avatar'), async (req, res, nex
       if (req.file && req.file.path) req.body.picture = req.file.path;
   
       await UsersModel.findByIdAndUpdate(req.params.id, req.body);
-      res.redirect("/users"); //redirecting to the income itself to check the updated value
+      res.redirect("/home"); //redirecting to the income itself to check the updated value
     } catch (err) {
       next(err)
     };

@@ -1,42 +1,83 @@
+<div class="form-container">
+    <div class="title">
+        Update my info
+    </div>
+    <form method="post" action="/users/update/{{user._id}}" class="form" enctype="multipart/form-data">
+        <div class="credentials">
 
-<form method="post" action="/users/update/{{_id}}" class="form" enctype="multipart/form-data">
+            <div class="input-box"> <label for="firstname">First Name</label>
+                <input type="text" name="firstname" id="firtsname" value="{{user.firstname}}">
+            </div>
 
-    <label for="firstname">First Name</label>
-    <input type="text" name="firstname" id="firtsname" value="{{firstname}}">
+            <div class="input-box">
+                <label for="lastname">Last Name</label>
+                <input type="text" name="lastname" id="lastname" value="{{user.lastname}}">
+            </div>
 
-    <label for="lastname">Last Name</label>
-    <input type="text" name="lastname" id="lastname" value="{{lastname}}">
+            <div class="input-box">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" value="{{user.username}}">
+            </div>
 
-    <label for="username">Username</label>
-    <input type="text" name="username" id="username" value="{{username}}">
+            <div class="input-box">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="name" value="{{user.email}}">
+            </div>
 
-    <label for="email">Email</label>
-    <input type="text" name="email" id="name" value="{{email}}">
+            <div class="input-box"> <label for="password">Password</label>
+                <input type="password" name="password" id="password" value="{{user.password}}">
+            </div>
 
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password" value="{{password}}">
 
-    <label for="profile"></label>
-    <select name="profile" id="profile">
-        {{#select profile}}
-        <option value="Family">Family</option>
-        <option value="Business">Business</option>
-        <option value="Student">Student</option>
-        <option value="Standard">Standard</option>
-        {{/select}}
-    </select>
+            <div class="input-box" id="uploader">
+                <label for="avatar">
+                    Picture
+                </label>
+                <input type="file" name="avatar" id="avatar">
+            </div>
+        </div>
 
-    <label for="gender"></label>
-    <select name="gender" id="gender">
-        <option value="Woman">Woman</option>
-        <option value="Man">Man</option>
-        <option value="Prefer Not To">Prefer Not To</option>
-    </select>
+        <div class="profile">
 
-    <label for="avatar">
-        Choose a Profile Picture
-    </label>
-    <input type="file" name="avatar" id="avatar">
+            <div>
 
-    <button>Submit</button>
-</form>
+                <div class="label-box">
+                    <label for="profile" class="profile-title">Profile type</label>
+                </div>
+
+                <select name="profile" id="profile" class="selector">
+                    {{#select user.profile}}
+                    <option value="Family">Family</option>
+                    <option value="Business">Business</option>
+                    <option value="Student">Student</option>
+                    <option value="Standard">Standard</option>
+                    {{/select}}
+                </select>
+            </div>
+            <div>
+
+                <div class="label-box">
+                    <label for="gender" class="profile-title">Gender</label>
+                </div>
+
+                <select name="gender" id="gender" class="selector">
+                    {{#select user.gender}}
+                    <option value="Woman">Woman</option>
+                    <option value="Man">Man</option>
+                    <option value="Prefer Not To">Prefer Not To</option>
+                </select>
+                {{/select}}
+            </div>
+
+        </div>
+
+
+        <div class="update">
+            <div>
+                <button class="update-btn">Update</button>
+            </div>
+        </div>
+
+
+    </form>
+</div>

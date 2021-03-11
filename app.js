@@ -36,7 +36,7 @@ app.use(
   session({
     secret: process.env.SESSION_SECRET,
     cookie: {
-      maxAge: 60000
+      maxAge: 6000000
     }, // in millisec
     store: new MongoStore({
       mongooseConnection: mongoose.connection,
@@ -64,6 +64,7 @@ const deleteUserRouter = require('./routes/UsersCRUD/deleteUsers');
 const readOneUserRouter = require('./routes/UsersCRUD/readOneUser');
 const updateUserRouter = require('./routes/UsersCRUD/updateUser');
 const logUser = require('./routes/UsersCRUD/signin');
+const logOut = require('./routes/UsersCRUD/signout');
 //Income
 const createIncomeRouter = require("./routes/IncomesCRUD/createIncome");
 const deleteIncomeRouter = require("./routes/IncomesCRUD/deleteIncome");
@@ -88,6 +89,7 @@ app.use('/', deleteUserRouter);
 app.use('/', readOneUserRouter);
 app.use('/', updateUserRouter);
 app.use('/', logUser);
+app.use('/', logOut);
 //Income
 app.use("/", createIncomeRouter);
 app.use("/", deleteIncomeRouter);

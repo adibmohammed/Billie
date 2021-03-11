@@ -26,8 +26,8 @@ const userSchema = new Schema({
 		type: String,
 		default: 'https://res.cloudinary.com/djogypr9r/image/upload/v1615377754/qcrteapita6niecfbf1y.jpg'
 	},
-	myexpense: { type: Schema.Types.ObjectId, ref: 'expenses' },
-	myincome: { type: Schema.Types.ObjectId, ref: 'income' }
+	myexpense: [{ type: Schema.Types.ObjectId, ref: 'expenses' }],
+	myincome: [{ type: Schema.Types.ObjectId, ref: 'income' }]
 });
 
 const UserModel = mongoose.model('user', userSchema);

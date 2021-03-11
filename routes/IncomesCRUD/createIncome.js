@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const UserModel = require('../../models/UserModel')
 const IncomeModel = require("../../models/IncomeModel");
 const uploader = require('./../../config/cloudinary');
 const protectRoute = require('./../../middlewares/protectRoute');
@@ -20,7 +21,10 @@ router.post("/incomes/new", uploader.single('picture'),async (req, res, next) =>
 
   try {
     await IncomeModel.create(newIncome);
-    res.redirect("/incomes"); //redirecting to the list of incomes only
+    let UserIncome = UserModel.findByIdAndUpdate({$push : {myincome : newIncome._id}});
+    console.log(newIncome)
+    res.redirect("/incomes");
+    return UserIncome;
   } catch (err) {
     console.log(err);
     next(err);

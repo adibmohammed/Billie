@@ -50,6 +50,8 @@ app.use(
 
 app.use(flash());
 // CUSTOM MIDDLEWARES
+//hide categories foe expenses
+app.use(require("./middlewares/exposeExpenseCategories"));
 // expose flash message to the hbs templates, if any flash-message is defined
 app.use(require("./middlewares/exposeFlashMessage"));
 // expose login status to the hbs templates

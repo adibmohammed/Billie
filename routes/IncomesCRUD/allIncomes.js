@@ -6,11 +6,12 @@ const IncomeModel = require("../../models/IncomeModel");
 
 //The page showing only the incomes
 
+
 router.get("/incomes", protectRoute, (req, res, next) => {
-  IncomeModel.find(req.body) //session to filter the income and find who they belong
+  UserModel.find(req.session.currentUser)
     .then((dbRes) => {
       res.render("incomes/allIncomes", {
-        incomes: dbRes,
+        incomes: dbRes.myincome,
         style: ["allEntries.css","modalAddAll.css"], 
         js: ["modalAddAll.js"]
       });

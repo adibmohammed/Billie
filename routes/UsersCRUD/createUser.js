@@ -15,7 +15,7 @@ router.get('/signup', (req, res, next) => {
 // POST Method for creationg a user (from form):
 
 router.post('/signup', uploader.single('avatar'), async (req, res, next) => {
-	const { firstname, lastname, username, email, password, profile, gender, avatar, myexpense, myincome } = req.body;
+	const { firstname, lastname, username, email, password, profile, gender, avatar} = req.body;
 	console.log('Sign UP is working', req.body);
 
 	console.log('This is the avatar', avatar);

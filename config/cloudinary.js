@@ -7,6 +7,7 @@ cloudinary.config({
   cloud_name: process.env.CLOUDINARY_NAME,
   api_key: process.env.CLOUDINARY_KEY,
   api_secret: process.env.CLOUDINARY_SECRET,
+  session_secret: process.env.SESSION_SECRET
 });
 // cloudinary : SAAS platform : specialized in images hosting (tools : metadata, image analyzing ...)
 const storage = new CloudinaryStorage({

@@ -109,44 +109,6 @@ a {
   box-shadow: 0 10px 20px #111;
 }
 
-/* sidebar open */
-.sidebar.open {
-  width: 250px;
-}
-.sidebar.open .menu-text {
-  display: block;
-}
-.sidebar.open .menu-item {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  width: 90%;
-}
-
-.sidebar.open .menu-item a {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  text-align: left;
-}
-
-.sidebar.open .menu-item .addBtn {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  text-align: left;
-}
-
-.sidebar.open .menu-item i {
-  margin: 15px;
-}
-
-.sidebar.open .expand-button i {
-  transform: rotate(-180deg);
-  position: absolute;
-  right: 10px;
-  top: -50%;
-}
 .menu-text {
   display: none;
 }

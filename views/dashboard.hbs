@@ -4,18 +4,18 @@
 {{/if}}
 <div id="main-content-dashboard">
     <div class="welcomeContainer">
-        <p class="user-welcome">Welcome to Billie, <i>{{currentUser.username}}</i></p>
+        <p class="user-welcome">Welcome to Billie, <i>{{user.username}}</i></p>
         <div class="user-info">
-            <div><img src="{{currentUser.avatar}}" alt="avatar" class="circle"></div>
-            <div class="name-info"><b>First name :</b> {{currentUser.firstname}} <br>
-                <b>Last name :</b> {{currentUser.lastname}}
+            <div><img src="{{user.avatar}}" alt="avatar" class="circle"></div>
+            <div class="name-info"><b>First name :</b> {{user.firstname}} <br>
+                <b>Last name :</b> {{user.lastname}}
             </div>
             <div class="btn-box">
                 <div>
-                    <a class="update-btn" href="/users/update/{{currentUser._id}}">Update your profile</a>
+                    <a class="update-btn" href="/users/update/{{user._id}}">Update your profile</a>
                 </div>
                 <div>
-                    <a href="/users/delete/{{currentUser._id}}">Remove your account</a>
+                    <a href="/users/delete/{{user._id}}">Remove your account</a>
                 </div>
             </div>
         </div>

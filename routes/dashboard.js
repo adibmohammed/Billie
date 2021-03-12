@@ -9,6 +9,7 @@ router.get("/home", protectRoute, function (req, res, next) {
     .then((dbRes) => {
       console.log(dbRes)
       res.render("dashboard", {
+        user: dbRes,
         style: ["modalAddAll.css", "dashboard.css"],
         js: ["modalAddAll.js"],
         totalExp: parseFloat(dbRes.myexpense.reduce((acc, val) => acc + val.amount, 0)).toFixed(2),

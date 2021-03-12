@@ -36,7 +36,7 @@ router.post('/signin', async (req, res, next) => {
 		if (!isSamePassword) {
             console.log("titi");
 			req.flash('Error', 'Invalid credentials');
-			res.redirect('/signup');
+			res.redirect('/signin');
 		} else {
             console.log("tata");
 			const userObject = foundUser.toObject();

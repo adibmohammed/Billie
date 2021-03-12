@@ -7,6 +7,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
   </style>
   <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   {{#each style}}
   <link rel='stylesheet' href='/stylesheets/{{this}}' />
   {{/each}}
@@ -18,10 +19,6 @@
 </head>
 
 <body>
- {{#if isLoggedIn}}
-  {{> topNavbar}}
-  {{> navBarSide}}
-{{/if}}
   </div>
   {{{body}}}
 </body>

@@ -1,3 +1,7 @@
+{{#if isLoggedIn}}
+  {{> topNavbar}}
+  {{> navBarSide}}
+{{/if}}
 <section id="all-details">
     <h2>Don't worry, we all need to refresh our memory sometimes</h2>
     <div class="details">
@@ -14,5 +18,6 @@
         </div>
 
         <a class="go-back" href="/incomes"><i class="fas fa-arrow-alt-circle-left"></i>Back</a>
+                <a class="go-edit" href="/expenses/update/{{expense._id}}">Edit<i class="fas fa-arrow-alt-circle-right"></i></a>
     </div>
 </section>

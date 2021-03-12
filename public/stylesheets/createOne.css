@@ -24,9 +24,9 @@
 .formCreate {
   padding: 5%;
   background-color: rgb(255, 255, 255);
-  box-shadow: -1px 2px 25px -6px #ff821b;
-  -webkit-box-shadow: -1px 2px 25px -6px #ff821b;
-  -moz-box-shadow: -1px 2px 25px -6px #ff821b;
+  box-shadow: -1px 2px 25px -6px #2b32b2;
+  -webkit-box-shadow: -1px 2px 25px -6px #2b32b2;
+  -moz-box-shadow: -1px 2px 25px -6px #2b32b2;
   border-radius: 15px;
   height: 100%;
   display: flex;
@@ -34,7 +34,7 @@
   flex-direction: column;
 }
 .formCreate > label {
-  font-size: 18px;
+  font-size: 23px;
   padding: 10px;
 }
 .formCreate > input {
@@ -42,11 +42,17 @@
   border-radius: 5px;
   background-color: transparent;
   border: solid 1px orange;
-  font-size: 14px;
+  font-size: 18px;
   resize: vertical;
+
 }
 .formCreate > select {
-  padding: 10px;
+  padding: 5px 35px 5px 5px;
+  height: 34px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url(./../images/down-chevron.png) 98% / 2% no-repeat #EEE;
   border-radius: 5px;
   background-color: transparent;
   border: solid 1px orange;

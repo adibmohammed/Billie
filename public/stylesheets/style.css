@@ -12,7 +12,6 @@
 }
 
 body {
-  padding: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   display: flex;
 }
@@ -221,7 +220,6 @@ a {
 @media (max-width: 1293px){
   body{
     max-width: 100%;
-    
   }
   .main-img{
     max-width: 800px;

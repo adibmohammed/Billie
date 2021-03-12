@@ -1,13 +1,14 @@
 :root {
-  --blue : #2b32b2;
+  --blue: #1368eb;
 }
 
 /*AVATAR*/
 .circle {
   display: flex;
-  justify-self: center;
+    justify-self: center;
+    position: absolute;
+    left: 40px
 }
-
 
 /* dashboard div containing all containers  */
 #main-content-dashboard {
@@ -20,15 +21,14 @@
   grid-column-start: 2;
   grid-row-start: 2;
   grid-row-end: 3;
-  background-color: rgb(255, 255, 255);
+  background-color: #1368eb;
   box-shadow: -1px 2px 25px -6px #2b32b2;
   -webkit-box-shadow: -1px 2px 25px -6px #2b32b2;
   -moz-box-shadow: -1px 2px 25px -6px #2b32b2;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
+  align-items: center;
   padding: 3vh;
   line-height: 3.5vh;
   position: relative;
@@ -36,6 +36,33 @@
 
 .user-info {
   margin-left: 4vh;
+    position: absolute;
+    top: 30%;
+    height: 100px;
+    width: 500px
+}
+.name-info {
+  font-size: 32px;
+    color: orange;
+    position: relative;
+    top: 20%;
+    left: 40%;
+}
+.btn-box {
+  position: absolute;
+  top: 130%;
+  left: 10%;
+  display: flex;
+  width: 500px;
+  color: #ffffff;
+}
+.update-btn {
+  margin-right: 40px;
+}
+.user-welcome {
+  font-size: 32px;
+  color: #ffffff;
+  text-align: center;
 }
 
 /*BALANCE*/
@@ -55,11 +82,17 @@
   justify-content: center;
   position: relative;
 }
-
+.balance{
+  font-size: 20px;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+}
 #balance-title {
   position: absolute;
   font-weight: bold;
   top: 15px;
+  
 }
 
 .exp-and-inc {
@@ -71,31 +104,49 @@
 
 #total-balance {
   color: var(--blue);
-  font-size: 5vh;
   text-shadow: rgba(0, 0, 0, 0.39) 0.5px 0.3px 0.2px;
   text-decoration: underline orange 1px 2px;
+  font-size: 9vh;
+  position: absolute;
+  top: 30%;
+  left: 5%;
 }
-
+.incomeTot{
+  position: absolute;
+    top: 10%;
+    right: 10%;
+    font-weight: bold;
+}
 #total-incomes {
   color: #1268eb;
   font-size: 3vh;
   text-shadow: rgba(0, 0, 0, 0.39) 0.5px 0.3px 0.2px;
   transition: 0.3s;
+  position: absolute;
+    top: 30%;
+    right: 10%;
 }
 #total-incomes:hover {
   font-size: 3.1vh;
 }
-
+.expensesTot{
+  position: absolute;
+  top: 60%;
+  right: 10%;
+  font-weight: bold;
+}
 #total-expenses {
   color: orange;
   font-size: 3vh;
   text-shadow: rgba(0, 0, 0, 0.39) 0.5px 0.3px 0.2px;
   transition: 0.3s;
+  position: absolute;
+    top: 80%;
+    right: 10%;
 }
 #total-expenses:hover {
   font-size: 3.1vh;
 }
-
 
 /*CHART*/
 .chartsContainer {
@@ -121,7 +172,7 @@
 }
 
 /*WIDGET*/
-.weather-container{
+.weather-container {
   width: auto;
   height: auto;
   grid-column-start: 4;
@@ -130,15 +181,14 @@
 
 #myChart {
   max-height: 300px;
-  max-width:300px;
+  max-width: 300px;
   display: inline-block;
 }
 
-
 /* CHART CONTAINER  */
-#myChart{
+#myChart {
   width: 300px;
-  height: 300px
+  height: 300px;
 }
 
 /*Text design*/
@@ -165,8 +215,9 @@ img.circle {
 /*ANIMATION*/
 
 .swing-in-bottom-fwd {
-	-webkit-animation: swing-in-bottom-fwd 3s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
-	        animation: swing-in-bottom-fwd 3s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+  -webkit-animation: swing-in-bottom-fwd 3s
+    cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: swing-in-bottom-fwd 3s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
 }
 
 /* ----------------------------------------------
@@ -181,36 +232,35 @@ img.circle {
  * animation swing-in-bottom-fwd
  * ----------------------------------------
  */
- @-webkit-keyframes swing-in-bottom-fwd {
-    0% {
-      -webkit-transform: rotateX(100deg);
-              transform: rotateX(100deg);
-      -webkit-transform-origin: bottom;
-              transform-origin: bottom;
-      opacity: 0;
-    }
-    100% {
-      -webkit-transform: rotateX(0);
-              transform: rotateX(0);
-      -webkit-transform-origin: bottom;
-              transform-origin: bottom;
-      opacity: 1;
-    }
+@-webkit-keyframes swing-in-bottom-fwd {
+  0% {
+    -webkit-transform: rotateX(100deg);
+    transform: rotateX(100deg);
+    -webkit-transform-origin: bottom;
+    transform-origin: bottom;
+    opacity: 0;
   }
-  @keyframes swing-in-bottom-fwd {
-    0% {
-      -webkit-transform: rotateX(100deg);
-              transform: rotateX(100deg);
-      -webkit-transform-origin: bottom;
-              transform-origin: bottom;
-      opacity: 0;
-    }
-    100% {
-      -webkit-transform: rotateX(0);
-              transform: rotateX(0);
-      -webkit-transform-origin: bottom;
-              transform-origin: bottom;
-      opacity: 1;
-    }
+  100% {
+    -webkit-transform: rotateX(0);
+    transform: rotateX(0);
+    -webkit-transform-origin: bottom;
+    transform-origin: bottom;
+    opacity: 1;
   }
-  
+}
+@keyframes swing-in-bottom-fwd {
+  0% {
+    -webkit-transform: rotateX(100deg);
+    transform: rotateX(100deg);
+    -webkit-transform-origin: bottom;
+    transform-origin: bottom;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(0);
+    transform: rotateX(0);
+    -webkit-transform-origin: bottom;
+    transform-origin: bottom;
+    opacity: 1;
+  }
+}

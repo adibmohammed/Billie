@@ -69,8 +69,8 @@
 .fileUpload {
   background: #1268eb;
   -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  border-radius: 15px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
   color: #fff;
   font-size: 1em;
   font-weight: bold;

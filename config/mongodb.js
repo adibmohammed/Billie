@@ -1,7 +1,8 @@
 const mongoose = require("mongoose");
+require('dotenv').config();
 
 mongoose.connect(
-  "mongodb+srv://Billie-dep-2:CB6fDpRQmogQKQ1L@cluster0.mg8ig.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+  process.env.MONGODB_URI,
   {
     useNewUrlParser: true,
     useCreateIndex: true,

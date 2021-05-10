@@ -20,4 +20,4 @@ ExpensesModel.create(expenses)
     console.log(error);
   });
 
-  mongoose.connection.close();
+mongoose.connection.close();
